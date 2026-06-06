@@ -4,7 +4,7 @@
 
 /* ===== HERO ===== */
 .hero {
-  background: linear-gradient(135deg, #fff5f5 0%, #f0f4f8 100%);
+  background: var(--bg-hero);
   border-bottom: 1px solid var(--border);
   padding: 60px 0;
   position: relative;
@@ -49,7 +49,11 @@
   margin-bottom: 16px;
 }
 
-.hero h1 .highlight { color: var(--red); }
+.hero h1 .highlight {
+  background: linear-gradient(135deg, var(--red) 0%, #ff6b76 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
 .hero-desc {
   font-size: 15.5px;

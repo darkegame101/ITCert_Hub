@@ -3,68 +3,11 @@
    Bao gồm: băng logo tự cuộn, filter, grid card
    ============================================= */
 
-/* ===== CERT LOGO MARQUEE ===== */
-.cert-marquee-wrap {
-  background: rgba(255, 255, 255, 0.06);
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 20px 0;
-  overflow: hidden;
-  box-shadow: inset 0 0 30px rgba(255, 255, 255, 0.03);
-}
 
-.cert-marquee-track {
-  display: flex;
-  gap: 0;
-  width: max-content;
-  animation: marquee-scroll 35s linear infinite;
-}
-
-.cert-marquee-track:hover { animation-play-state: paused; }
-
-/* Duplicate track for seamless loop */
-.cert-marquee-wrap .track-a,
-.cert-marquee-wrap .track-b {
-  display: flex;
-  gap: 0;
-  flex-shrink: 0;
-}
-
-.cert-logo-item {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 6px 25px;
-  border-right: 1px solid rgba(255, 255, 255, 0.08);
-  flex-shrink: 0;
-  opacity: 1;
-  transition: transform 0.2s ease;
-}
-
-.cert-logo-item:hover {
-  transform: translateY(-3px);
-}
-
-.cert-logo-item img {
-  height: 68px; /* Enlarged from 48px to 68px */
-  width: auto;
-  object-fit: contain;
-  filter: brightness(1.15) contrast(1.05);
-  transition: var(--ease);
-}
-
-.cert-logo-item:hover img {
-  filter: brightness(1.5) contrast(1.1);
-}
-
-@keyframes marquee-scroll {
-  0%   { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
 
 /* ===== VOUCHER PAGE HERO ===== */
 .voucher-hero {
-  background: linear-gradient(135deg, #fff5f5 0%, #f0f4f8 100%);
+  background: var(--bg-hero);
   border-bottom: 1px solid var(--border);
   padding: 40px 0 32px;
 }
@@ -110,7 +53,7 @@
   background: rgba(255, 255, 255, 0.95);
   border-bottom: 1px solid var(--border);
   position: sticky;
-  top: 66px; /* header height */
+  top: 90px; /* header height */
   z-index: 50;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
@@ -465,13 +408,12 @@
 }
 
 @media (max-width: 768px) {
-  .vendor-tabs-wrap { top: 58px; }
+  .vendor-tabs-wrap { top: 76px; }
   .voucher-hero-inner { flex-direction: column; }
   .voucher-hero-badges { width: 100%; }
   .hero-badge-item { flex: 1; min-width: 80px; }
   .voucher-grid { grid-template-columns: 1fr; }
   .why-grid-v { grid-template-columns: 1fr 1fr; }
-  .cert-logo-item img { height: 50px; }
 }
 
 @media (max-width: 480px) {

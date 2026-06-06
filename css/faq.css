@@ -3,7 +3,7 @@
    ============================================= */
 
 .faq-hero {
-  background: linear-gradient(135deg, #fff5f5 0%, #f0f4f8 100%);
+  background: var(--bg-hero);
   border-bottom: 1px solid var(--border);
   padding: 40px 0 32px;
 }
