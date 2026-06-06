@@ -195,14 +195,57 @@
 .dropdown .dd-icon {
   width: 24px;
   height: 24px;
-  background: var(--red-bg);
-  border-radius: var(--r-sm);
+  border-radius: 6px;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 11px;
-  color: var(--red);
   flex-shrink: 0;
+  transition: var(--ease);
+}
+
+/* Custom brand colors for dropdown icons based on href targets */
+.dropdown a[href*="cisco"] .dd-icon {
+  background: rgba(28, 163, 232, 0.08);
+  color: #1ca3e8;
+  border: 1px solid rgba(28, 163, 232, 0.15);
+}
+.dropdown a[href*="microsoft"] .dd-icon {
+  background: rgba(0, 120, 212, 0.08);
+  color: #0078d4;
+  border: 1px solid rgba(0, 120, 212, 0.15);
+}
+.dropdown a[href*="aws"] .dd-icon {
+  background: rgba(255, 153, 0, 0.08);
+  color: #ff9900;
+  border: 1px solid rgba(255, 153, 0, 0.15);
+}
+.dropdown a[href*="comptia"] .dd-icon {
+  background: var(--red-bg);
+  color: var(--red);
+  border: 1px solid var(--red-border);
+}
+.dropdown a[href*="security"] .dd-icon {
+  background: rgba(156, 39, 176, 0.08);
+  color: #9c27b0;
+  border: 1px solid rgba(156, 39, 176, 0.15);
+}
+/* "Xem tất cả" in Voucher dropdown */
+.dropdown a[href="voucher.html"] .dd-icon {
+  background: var(--red-bg);
+  color: var(--red);
+  border: 1px solid var(--red-border);
+}
+/* "Xem tất cả" in Dump dropdown */
+.dropdown a[href="dump.html"] .dd-icon {
+  background: var(--red-bg);
+  color: var(--red);
+  border: 1px solid var(--red-border);
+}
+
+/* Micro-animation: scale icon on item hover */
+.dropdown li a:hover .dd-icon {
+  transform: scale(1.08);
 }
 
 /* Header right actions */

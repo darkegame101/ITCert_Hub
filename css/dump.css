@@ -17,33 +17,44 @@
   display: flex;
   align-items: center;
   gap: 14px;
-  padding: 14px 20px;
+  padding: 16px 20px;
   background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: var(--r-lg);
+  border: 1px solid rgba(229, 231, 235, 0.75);
+  border-radius: var(--r-xl);
   cursor: pointer;
   user-select: none;
   transition: var(--ease);
-  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.02);
+  box-shadow: 0 4px 18px rgba(15, 23, 42, 0.025), 0 1px 3px rgba(0, 0, 0, 0.01);
 }
 
-.dump-vendor-header:hover { border-color: var(--red-border); }
-.dump-vendor-header.open  { border-color: var(--red-border); border-radius: var(--r-lg) var(--r-lg) 0 0; }
+.dump-vendor-header:hover {
+  border-color: rgba(220, 38, 38, 0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.05);
+}
+
+.dump-vendor-header.open {
+  border-color: rgba(220, 38, 38, 0.2);
+  border-radius: var(--r-xl) var(--r-xl) 0 0;
+  transform: none;
+  box-shadow: 0 4px 18px rgba(15, 23, 42, 0.025);
+}
 
 .dvh-icon {
-  width: 40px; height: 40px;
+  width: 44px; height: 44px;
   border-radius: var(--r-md);
   display: flex; align-items: center; justify-content: center;
   font-size: 20px; flex-shrink: 0;
+  box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.5), 0 4px 10px rgba(15, 23, 42, 0.04);
 }
 
-.dvh-cisco   { background: rgba(28,163,232,0.12); color: #1ca3e8; }
-.dvh-ms      { background: rgba(0,120,212,0.12);  color: #0078d4; }
-.dvh-aws     { background: rgba(255,153,0,0.12);  color: #ff9900; }
-.dvh-comptia { background: var(--red-bg);          color: var(--red); }
-.dvh-google  { background: rgba(66,133,244,0.12); color: #4285F4; }
-.dvh-pmi     { background: rgba(0,166,80,0.12);   color: #00a650; }
-.dvh-ec      { background: rgba(139,0,0,0.15);    color: #cc2222; }
+.dvh-cisco   { background: rgba(28,163,232,0.06); color: #1ca3e8; border: 1px solid rgba(28,163,232,0.15); }
+.dvh-ms      { background: rgba(0,120,212,0.06);  color: #0078d4; border: 1px solid rgba(0,120,212,0.15); }
+.dvh-aws     { background: rgba(255,153,0,0.06);  color: #ff9900; border: 1px solid rgba(255,153,0,0.15); }
+.dvh-comptia { background: var(--red-bg);          color: var(--red); border: 1px solid var(--red-border); }
+.dvh-google  { background: rgba(66,133,244,0.06); color: #4285F4; border: 1px solid rgba(66,133,244,0.15); }
+.dvh-pmi     { background: rgba(0,166,80,0.06);   color: #00a650; border: 1px solid rgba(0,166,80,0.15); }
+.dvh-ec      { background: rgba(139,0,0,0.08);    color: #cc2222; border: 1px solid rgba(139,0,0,0.15); }
 
 .dvh-info { flex: 1; }
 .dvh-info h3 { font-size: 16px; font-weight: 700; color: var(--text-white); margin: 0; }
@@ -59,9 +70,9 @@
 
 /* Accordion content */
 .dump-vendor-content {
-  border: 1px solid var(--red-border);
+  border: 1px solid rgba(220, 38, 38, 0.15);
   border-top: none;
-  border-radius: 0 0 var(--r-lg) var(--r-lg);
+  border-radius: 0 0 var(--r-xl) var(--r-xl);
   overflow: hidden;
   display: none;
 }
@@ -118,11 +129,18 @@
 
 .dump-info-card {
   background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: var(--r-lg);
-  padding: 20px;
+  border: 1px solid rgba(229, 231, 235, 0.75);
+  border-radius: var(--r-xl);
+  padding: 24px 20px;
   text-align: center;
-  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.03);
+  box-shadow: 0 4px 18px rgba(15, 23, 42, 0.02), 0 1px 3px rgba(0, 0, 0, 0.01);
+  transition: var(--ease);
+}
+
+.dump-info-card:hover {
+  border-color: var(--red-border);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(220, 38, 38, 0.03);
 }
 
 .dic-icon { font-size: 28px; color: var(--red); margin-bottom: 10px; display: block; }

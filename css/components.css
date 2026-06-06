@@ -276,7 +276,10 @@ textarea.form-control { resize: vertical; min-height: 100px; }
   transition: var(--ease);
 }
 
-.search-box input:focus { border-color: var(--red); }
+.search-box input:focus {
+  border-color: var(--red);
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.08);
+}
 .search-box input::placeholder { color: var(--text-dim); }
 
 .search-box i {

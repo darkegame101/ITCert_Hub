@@ -130,20 +130,32 @@
 }
 
 .level-tab {
-  padding: 5px 14px;
+  padding: 6px 16px;
   border-radius: var(--r-xl);
-  font-size: 12.5px;
+  font-size: 13px;
   font-weight: 600;
   cursor: pointer;
   border: 1px solid var(--border);
-  background: transparent;
+  background: var(--bg-card);
   color: var(--text-muted);
   transition: var(--ease);
   font-family: var(--font);
 }
 
-.level-tab:hover { border-color: var(--border-light); color: var(--text-white); }
-.level-tab.active { background: var(--bg-hover); border-color: var(--border-light); color: var(--text-white); }
+.level-tab:hover {
+  border-color: var(--red);
+  color: var(--red);
+  transform: translateY(-1px);
+}
+.level-tab:active {
+  transform: translateY(0);
+}
+.level-tab.active {
+  background: var(--bg-hover);
+  border-color: var(--border-light);
+  color: var(--text-white);
+  transform: translateY(0);
+}
 
 /* Active states per level */
 .level-tab[data-level="all"].active    { background: var(--bg-hover); }
