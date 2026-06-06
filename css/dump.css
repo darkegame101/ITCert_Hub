@@ -154,22 +154,106 @@
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
   .dump-info-grid { grid-template-columns: 1fr; }
-  .dump-table thead { display: none; }
-  .dump-table td { display: block; padding: 5px 14px; border: none; }
-  .dump-table tr { border-bottom: 1px solid var(--border); }
-  .dump-table tr td:first-child { padding-top: 12px; }
-  .dump-table tr td:last-child  { padding-bottom: 12px; }
   
-  .dt-action {
+  /* Dump table card layout */
+  .dump-table thead { display: none; }
+  .dump-table tbody { display: flex; flex-direction: column; gap: 16px; width: 100%; }
+  .dump-table tr {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px 12px;
+    padding: 16px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--r-lg);
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.02);
+  }
+  .dump-table tr td {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    border: none;
+  }
+  /* Code (left) */
+  .dump-table tr td.dt-code {
+    grid-column: 1;
+    font-weight: 800;
+    color: var(--red);
+    font-size: 13px;
+  }
+  /* Name (span 2) */
+  .dump-table tr td.dt-name {
+    grid-column: span 2;
+    font-weight: 700;
+    font-size: 15.5px;
+    color: var(--text-white);
+    padding: 4px 0 8px;
+    border-bottom: 1px solid var(--border-light);
+    display: block;
+    text-align: left;
+  }
+  /* Count */
+  .dump-table tr td.dt-count {
+    grid-column: 1;
+    font-size: 13px;
+    color: var(--text-muted);
+    gap: 4px;
+  }
+  .dump-table tr td.dt-count::before {
+    content: "Số câu:";
+    font-weight: 600;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    font-size: 10px;
+  }
+  /* Update */
+  .dump-table tr td.dt-update {
+    grid-column: 2;
+    justify-self: end;
+    font-size: 13px;
+    color: var(--text-muted);
+    gap: 4px;
+  }
+  .dump-table tr td.dt-update::before {
+    content: "Cập nhật:";
+    font-weight: 600;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    font-size: 10px;
+  }
+  /* Price */
+  .dump-table tr td.dt-price {
+    grid-column: span 2;
+    padding: 8px 0;
+    font-size: 15.5px;
+    font-weight: 800;
+    color: var(--red);
+    gap: 6px;
+    border-top: 1px dashed var(--border-light);
+  }
+  .dump-table tr td.dt-price::before {
+    content: "Giá tài liệu:";
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-muted);
+  }
+  /* Actions */
+  .dump-table tr td.dt-action {
+    grid-column: span 2;
+    padding: 8px 0 0;
     display: flex;
     gap: 8px;
-    margin-top: 6px;
-    padding-top: 10px !important;
-    border-top: 1px dashed var(--border) !important;
+    width: 100%;
+    border-top: 1px solid var(--border-light);
   }
-  .dt-action .btn {
+  .dump-table tr td.dt-action .btn,
+  .dump-table tr td.dt-action button {
     flex: 1;
+    display: inline-flex;
     justify-content: center;
+    align-items: center;
+    padding: 10px;
+    font-size: 13px;
   }
 }
 

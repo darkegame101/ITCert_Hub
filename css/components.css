@@ -431,5 +431,19 @@ textarea.form-control { resize: vertical; min-height: 100px; }
 @media (max-width: 768px) {
   .form-row { grid-template-columns: 1fr; }
   .contact-strip-inner { flex-direction: column; align-items: flex-start; }
-  .filter-bar { flex-direction: column; align-items: flex-start; }
+  .filter-bar { flex-direction: column; align-items: flex-start; gap: 12px; }
+  .filter-tabs {
+    overflow-x: auto;
+    white-space: nowrap;
+    width: 100%;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    padding-bottom: 4px;
+  }
+  .filter-tabs::-webkit-scrollbar {
+    display: none;
+  }
+  .filter-tab {
+    flex-shrink: 0;
+  }
 }

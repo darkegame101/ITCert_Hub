@@ -88,8 +88,26 @@
     <nav class="nav">
       <ul class="nav-list">
         <li><a href="index.html" class="nav-link">Trang Chủ</a></li>
-        <li><a href="voucher.html" class="nav-link">Voucher</a></li>
-        <li><a href="dump.html" class="nav-link">Dump / Tài Liệu</a></li>
+        <li class="has-dropdown">
+          <a href="voucher.html" class="nav-link">Voucher <i class="fas fa-chevron-down" style="font-size:10px;"></i></a>
+          <ul class="dropdown">
+            <li><a href="voucher.html#cisco"><span class="dd-icon"><i class="fas fa-network-wired"></i></span> Cisco</a></li>
+            <li><a href="voucher.html#microsoft"><span class="dd-icon"><i class="fab fa-microsoft"></i></span> Microsoft / Azure</a></li>
+            <li><a href="voucher.html#aws"><span class="dd-icon"><i class="fab fa-aws"></i></span> AWS</a></li>
+            <li><a href="voucher.html#comptia"><span class="dd-icon"><i class="fas fa-shield-alt"></i></span> CompTIA</a></li>
+            <li><a href="voucher.html#security"><span class="dd-icon"><i class="fas fa-user-secret"></i></span> CyberSecurity</a></li>
+            <li><a href="voucher.html"><span class="dd-icon"><i class="fas fa-ticket"></i></span> Xem tất cả →</a></li>
+          </ul>
+        </li>
+        <li class="has-dropdown">
+          <a href="dump.html" class="nav-link">Dump / Tài Liệu <i class="fas fa-chevron-down" style="font-size:10px;"></i></a>
+          <ul class="dropdown">
+            <li><a href="dump.html#cisco"><span class="dd-icon"><i class="fas fa-network-wired"></i></span> Cisco Dumps</a></li>
+            <li><a href="dump.html#microsoft"><span class="dd-icon"><i class="fab fa-microsoft"></i></span> Microsoft Dumps</a></li>
+            <li><a href="dump.html#aws"><span class="dd-icon"><i class="fab fa-aws"></i></span> AWS Dumps</a></li>
+            <li><a href="dump.html"><span class="dd-icon"><i class="fas fa-book"></i></span> Xem tất cả →</a></li>
+          </ul>
+        </li>
         <li><a href="blog.html" class="nav-link">Blog & Mẹo</a></li>
         <li><a href="faq.html" class="nav-link active">FAQ</a></li>
         <li><a href="contact.html" class="nav-link">Liên Hệ</a></li>
@@ -97,7 +115,9 @@
     </nav>
     <div class="header-actions">
       <a href="contact.html" class="btn btn-primary btn-sm"><i class="fas fa-ticket"></i> Đặt Voucher</a>
-      <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </div>
 </header>
