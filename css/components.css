@@ -59,13 +59,14 @@
   gap: 8px;
   padding: 10px 20px;
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 700;
   border-radius: var(--r-md);
   border: 1px solid transparent;
   cursor: pointer;
   transition: var(--ease);
   white-space: nowrap;
-  font-family: var(--font);
+  font-family: var(--font-heading);
+  letter-spacing: -0.01em;
   line-height: 1;
 }
 

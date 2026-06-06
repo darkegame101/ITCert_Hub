@@ -4,7 +4,7 @@
 
 const ITCERT_CONFIG = {
   facebook: "https://facebook.com/itcerthub",
-  messenger: "https://m.me/itcerthub",
+  messenger: "https://m.me/ItCertHub",
   zalo: "https://zalo.me/0912345678",
   whatsapp: "https://wa.me/84912345678",
   phone: "tel:0912345678",

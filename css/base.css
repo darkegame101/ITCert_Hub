@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Roboto:wght@300;400;500;700;900&display=swap');
+
 /* =============================================
    base.css – Variables, Reset, Typography
    Dùng ở: TẤT CẢ các trang (load đầu tiên)
@@ -20,10 +22,10 @@
   --bg-hover:     #f1f5f9;
 
   /* Dark Text for Light Mode */
-  --text-white:   #0f172a;
-  --text-main:    #334155;
-  --text-muted:   #64748b;
-  --text-dim:     #94a3b8;
+  --text-white:   #090d16;
+  --text-main:    #1e293b;
+  --text-muted:   #475569;
+  --text-dim:     #64748b;
 
   /* Light Mode Borders */
   --border:       #e2e8f0;
@@ -43,7 +45,9 @@
   --r-xl:  20px;
 
   /* Font */
-  --font: 'Arial', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-heading: 'Google Sans', 'Product Sans', 'Outfit', 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-body: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font: var(--font-body);
 
   /* Transitions */
   --ease: all 0.22s ease;
@@ -58,7 +62,7 @@
 
 html {
   scroll-behavior: smooth;
-  font-size: 15px;
+  font-size: 16px;
 }
 
 body {
@@ -66,7 +70,7 @@ body {
   background: var(--bg-body);
   color: var(--text-main);
   line-height: 1.65;
-  -webkit-font-smoothing: antialiased;
+  letter-spacing: -0.01em;
   overflow-x: hidden;
 }
 
@@ -95,19 +99,25 @@ input, select, textarea { font-family: var(--font); }
 
 /* ---------- Typography ---------- */
 h1, h2, h3, h4, h5 {
-  font-weight: 700;
-  line-height: 1.25;
+  font-family: var(--font-heading);
+  font-weight: 800; /* Heavier weight for premium modern feel */
+  line-height: 1.2;
   color: var(--text-white);
+  letter-spacing: -0.025em; /* Tight letter spacing for geometric feel */
+  text-rendering: optimizeLegibility;
 }
 
-h1 { font-size: clamp(26px, 4vw, 40px); }
-h2 { font-size: clamp(20px, 3vw, 30px); }
-h3 { font-size: clamp(16px, 2.5vw, 20px); }
-h4 { font-size: 16px; }
+h1 { font-size: clamp(28px, 4vw, 44px); }
+h2 { font-size: clamp(22px, 3vw, 32px); }
+h3 { font-size: clamp(17px, 2.5vw, 22px); }
+h4 { font-size: 16px; font-weight: 700; letter-spacing: -0.015em; }
 
-p { color: var(--text-main); }
+p {
+  color: var(--text-main);
+  font-family: var(--font-body);
+}
 
-strong { color: var(--text-white); font-weight: 600; }
+strong { color: var(--text-white); font-weight: 700; }
 
 /* ---------- Section Spacing ---------- */
 .section { padding: 60px 0; }

@@ -46,10 +46,10 @@
 }
 
 .cert-logo-item img {
-  height: 48px;
+  height: 68px; /* Enlarged from 48px to 68px */
   width: auto;
   object-fit: contain;
-  filter: brightness(1.3) contrast(1.05);
+  filter: brightness(1.15) contrast(1.05);
   transition: var(--ease);
 }
 
@@ -133,7 +133,7 @@
   gap: 8px;
   padding: 14px 20px;
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--text-muted);
   border-bottom: 2px solid transparent;
   cursor: pointer;
@@ -143,7 +143,8 @@
   border-top: none;
   border-left: none;
   border-right: none;
-  font-family: var(--font);
+  font-family: var(--font-heading);
+  letter-spacing: -0.01em;
   flex-shrink: 0;
 }
 
@@ -470,7 +471,7 @@
   .hero-badge-item { flex: 1; min-width: 80px; }
   .voucher-grid { grid-template-columns: 1fr; }
   .why-grid-v { grid-template-columns: 1fr 1fr; }
-  .cert-logo-item img { height: 38px; }
+  .cert-logo-item img { height: 50px; }
 }
 
 @media (max-width: 480px) {

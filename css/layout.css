@@ -97,15 +97,17 @@
   display: block;
   padding: 8px 14px;
   font-size: 14px;
-  font-weight: 500;
-  color: var(--text-muted);
+  font-weight: 800;
+  font-family: var(--font-heading);
+  letter-spacing: -0.01em;
+  color: var(--text-white);
   border-radius: var(--r-md);
   white-space: nowrap;
   position: relative;
 }
 
 .nav-link:hover {
-  color: var(--text-white);
+  color: var(--red);
   background: var(--bg-hover);
 }
 
