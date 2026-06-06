@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /pdf/*-preview.pdf # Disallow crawling preview PDFs directly to avoid duplicate index
+
+Sitemap: https://itcerthub.vn/sitemap.xml
