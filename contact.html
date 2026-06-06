@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Liên Hệ & Đặt Hàng Voucher IT | ITCert Hub</title>
+  <meta name="description" content="Liên hệ ITCert Hub để đặt mua voucher thi chứng chỉ IT, tư vấn lộ trình học. Hỗ trợ qua WhatsApp, Zalo, Email. Phản hồi trong 30 phút." />
+  <link rel="icon" href="assset/logo.png" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/contact.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+<!-- ═══ SUPPORT WIDGET (CHAT POPUP) ═══ -->
+<div class="support-widget" id="support-widget">
+  <div class="support-popup" id="support-popup">
+    <div class="support-popup-header">
+      <div class="support-avatar">IT</div>
+      <div class="support-header-info">
+        <h4>Hỗ Trợ Trực Tuyến</h4>
+        <span>Phản hồi trong 5 phút</span>
+      </div>
+      <button class="support-close" id="support-close"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="support-popup-body">
+      <p class="support-greeting">Xin chào! Chúng tôi có thể giúp gì cho bạn? Hãy chọn một kênh liên hệ tiện lợi nhất phía dưới để trò chuyện cùng admin:</p>
+      
+      <div class="support-channels">
+        <a href="#" class="support-channel-btn sc-zalo" target="_blank" data-config="zalo">
+          <span class="sc-icon">Z</span>
+          <div class="sc-text">
+            <strong>Chat qua Zalo</strong>
+            <span>Hỗ trợ nhanh nhất 24/7</span>
+          </div>
+        </a>
+        <a href="#" class="support-channel-btn sc-messenger" target="_blank" data-config="messenger">
+          <i class="fab fa-facebook-messenger"></i>
+          <div class="sc-text">
+            <strong>Nhắn tin Messenger</strong>
+            <span>Hỗ trợ qua Facebook cá nhân</span>
+          </div>
+        </a>
+        <a href="#" class="support-channel-btn sc-fanpage" target="_blank" data-config="facebook">
+          <i class="fab fa-facebook"></i>
+          <div class="sc-text">
+            <strong>Truy cập Fanpage</strong>
+            <span>Cập nhật tin tức & ưu đãi</span>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="support-popup-footer">
+      <a href="#" data-config="phone"><i class="fas fa-phone-alt"></i> Hotline: <span data-config="phoneNumber">0912 345 678</span></a>
+    </div>
+  </div>
+  
+  <button class="support-trigger" id="support-trigger" aria-label="Hỗ trợ trực tuyến">
+    <i class="fas fa-comments chat-open-icon"></i>
+    <i class="fas fa-times chat-close-icon" style="display:none;"></i>
+    <span class="support-pulse"></span>
+  </button>
+</div>
+
+<div class="topbar">
+  <div class="container topbar-inner">
+    <div class="topbar-left">
+      <span><i class="fas fa-envelope"></i> <span data-config="email">info@itcerthub.vn</span></span>
+      <span><i class="fas fa-phone"></i> <span data-config="phoneNumber">0912 345 678</span></span>
+      <span><i class="fas fa-clock"></i> T2–T7: 8:00 – 21:00</span>
+    </div>
+    <div class="topbar-right">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+    </div>
+  </div>
+</div>
+
+<header class="header" id="header">
+  <div class="container header-inner">
+    <a href="index.html" class="logo"><img src="assset/logo.png" alt="ITCert Hub Logo" /></a>
+    <nav class="nav">
+      <ul class="nav-list">
+        <li><a href="index.html"   class="nav-link">Trang Chủ</a></li>
+        <li><a href="voucher.html" class="nav-link">Voucher</a></li>
+        <li><a href="dump.html"    class="nav-link">Dump / Tài Liệu</a></li>
+        <li><a href="blog.html"    class="nav-link">Blog & Mẹo</a></li>
+        <li><a href="faq.html"     class="nav-link">FAQ</a></li>
+        <li><a href="contact.html" class="nav-link active">Liên Hệ</a></li>
+      </ul>
+    </nav>
+    <div class="header-actions">
+      <a href="#" class="btn btn-messenger btn-sm" target="_blank" data-config="messenger"><i class="fab fa-facebook-messenger"></i> Messenger</a>
+      <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="nav-overlay" id="nav-overlay"></div>
+<div class="nav-panel" id="nav-panel">
+  <button class="nav-panel-close" id="nav-close"><i class="fas fa-times"></i></button>
+  <a href="index.html"   class="nav-link">Trang Chủ</a>
+  <a href="voucher.html" class="nav-link">Voucher</a>
+  <a href="dump.html"    class="nav-link">Dump / Tài Liệu</a>
+  <a href="blog.html"    class="nav-link">Blog & Mẹo</a>
+  <a href="faq.html"     class="nav-link">FAQ</a>
+  <a href="contact.html" class="nav-link">Liên Hệ</a>
+</div>
+
+<!-- Hero -->
+<div class="contact-hero">
+  <div class="container">
+    <nav class="breadcrumb">
+      <a href="index.html">Trang chủ</a>
+      <i class="fas fa-chevron-right"></i>
+      <span>Liên Hệ</span>
+    </nav>
+    <div class="sec-label"><i class="fas fa-paper-plane"></i> Liên Hệ & Đặt Hàng</div>
+    <h1>Đặt <span style="color:var(--red);">Voucher / Dump</span> Ngay</h1>
+    <p>Phản hồi trong vòng 30 phút. Tư vấn miễn phí, không có phí ẩn.</p>
+  </div>
+</div>
+
+<main>
+  <div class="container contact-layout">
+
+    <!-- Info -->
+    <div class="contact-info">
+      <h2>Thông Tin Liên Hệ</h2>
+      <p>Chúng tôi hỗ trợ qua nhiều kênh. Chọn kênh phù hợp nhất với bạn.</p>
+
+      <div class="contact-item">
+        <div class="contact-item-icon"><i class="fas fa-phone"></i></div>
+        <div>
+          <div class="contact-item-label">Điện Thoại / Zalo</div>
+          <div class="contact-item-value"><a href="#" data-config="phone"><span data-config="phoneNumber">0912 345 678</span></a></div>
+        </div>
+      </div>
+
+      <div class="contact-item">
+        <div class="contact-item-icon"><i class="fab fa-facebook-messenger"></i></div>
+        <div>
+          <div class="contact-item-label">Messenger</div>
+          <div class="contact-item-value"><a href="#" target="_blank" data-config="messenger">m.me/itcerthub</a></div>
+        </div>
+      </div>
+
+      <div class="contact-item">
+        <div class="contact-item-icon"><i class="fas fa-envelope"></i></div>
+        <div>
+          <div class="contact-item-label">Email</div>
+          <div class="contact-item-value"><a href="#" data-config="emailLink"><span data-config="email">info@itcerthub.vn</span></a></div>
+        </div>
+      </div>
+
+      <div class="contact-item">
+        <div class="contact-item-icon"><i class="fas fa-clock"></i></div>
+        <div>
+          <div class="contact-item-label">Giờ Làm Việc</div>
+          <div class="contact-item-value">Thứ 2 – Thứ 7: 8:00 – 21:00</div>
+        </div>
+      </div>
+
+      <div class="contact-item">
+        <div class="contact-item-icon"><i class="fas fa-bolt"></i></div>
+        <div>
+          <div class="contact-item-label">Thời Gian Giao Hàng</div>
+          <div class="contact-item-value">1 – 4 giờ (trong giờ làm việc)</div>
+        </div>
+      </div>
+
+      <!-- Social quick links -->
+      <div class="contact-socials">
+        <a href="#" class="contact-social-btn csb-fb" target="_blank" data-config="facebook"><i class="fab fa-facebook-f"></i> Facebook</a>
+        <a href="#" class="contact-social-btn csb-zalo" target="_blank"><i class="fas fa-comments"></i> Zalo</a>
+        <a href="#" class="contact-social-btn csb-messenger" target="_blank" data-config="messenger"><i class="fab fa-facebook-messenger"></i> Messenger</a>
+      </div>
+
+      <!-- Payment methods -->
+      <div class="payment-section">
+        <h4><i class="fas fa-credit-card" style="color:var(--red);margin-right:6px;"></i> Phương Thức Thanh Toán</h4>
+        <div class="payment-grid">
+          <div class="payment-method"><i class="fas fa-university"></i> Chuyển khoản ngân hàng</div>
+          <div class="payment-method"><i class="fas fa-mobile-alt"></i> MoMo</div>
+          <div class="payment-method"><i class="fas fa-wallet"></i> VNPay</div>
+          <div class="payment-method"><i class="fab fa-paypal"></i> PayPal</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Form -->
+    <div class="contact-form-wrap">
+      <h2>Gửi Yêu Cầu Đặt Hàng</h2>
+      <p>Điền thông tin, chúng tôi sẽ liên hệ lại trong 30 phút.</p>
+
+      <form id="order-form">
+        <!-- Product type -->
+        <div class="form-group">
+          <label class="form-label">Loại Sản Phẩm</label>
+          <div class="product-options">
+            <label class="product-option selected">
+              <input type="radio" name="product_type" value="voucher" checked />
+              <i class="fas fa-ticket"></i>
+              <span>Voucher Thi</span>
+            </label>
+            <label class="product-option">
+              <input type="radio" name="product_type" value="dump" />
+              <i class="fas fa-book-open"></i>
+              <span>Dump Luyện Thi</span>
+            </label>
+            <label class="product-option">
+              <input type="radio" name="product_type" value="combo" />
+              <i class="fas fa-box"></i>
+              <span>Combo Voucher + Dump</span>
+            </label>
+            <label class="product-option">
+              <input type="radio" name="product_type" value="consult" />
+              <i class="fas fa-comments"></i>
+              <span>Tư Vấn Lộ Trình</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Họ và Tên *</label>
+            <input type="text" class="form-control" placeholder="Nguyễn Văn A" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label">Số Điện Thoại *</label>
+            <input type="tel" class="form-control" placeholder="0912 345 678" required />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Email *</label>
+          <input type="email" class="form-control" placeholder="email@example.com" required />
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Chứng Chỉ Cần Mua</label>
+          <select class="form-control">
+            <option value="">-- Chọn chứng chỉ --</option>
+            <optgroup label="Cisco">
+              <option>CCNA (200-301)</option>
+              <option>CCNP ENCOR (350-401)</option>
+              <option>CyberOps Associate (200-201)</option>
+            </optgroup>
+            <optgroup label="Microsoft">
+              <option>Azure Fundamentals (AZ-900)</option>
+              <option>Azure Administrator (AZ-104)</option>
+              <option>Azure Solutions Architect (AZ-305)</option>
+              <option>Security Fundamentals (SC-900)</option>
+            </optgroup>
+            <optgroup label="AWS">
+              <option>Cloud Practitioner (CLF-C02)</option>
+              <option>Solutions Architect Associate (SAA-C03)</option>
+              <option>Developer Associate (DVA-C02)</option>
+            </optgroup>
+            <optgroup label="CompTIA">
+              <option>Security+ (SY0-701)</option>
+              <option>Network+ (N10-009)</option>
+            </optgroup>
+            <optgroup label="Khác">
+              <option>CEH v12 (EC-Council)</option>
+              <option>PMP (PMI)</option>
+              <option>Khác – ghi vào ghi chú</option>
+            </optgroup>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Ghi Chú / Yêu Cầu Thêm</label>
+          <textarea class="form-control" rows="4" placeholder="Ví dụ: Cần voucher gấp trong ngày, hoặc hỏi thêm về lộ trình học..."></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-lg btn-full">
+          <i class="fas fa-paper-plane"></i> Gửi Yêu Cầu
+        </button>
+
+        <p class="form-note"><i class="fas fa-check-circle"></i> Chúng tôi sẽ liên hệ lại trong vòng 30 phút</p>
+      </form>
+
+      <!-- Success message (hidden by default) -->
+      <div class="form-success" id="form-success">
+        <i class="fas fa-check-circle"></i>
+        <h3>Đã Nhận Yêu Cầu!</h3>
+        <p>Chúng tôi sẽ liên hệ lại với bạn trong vòng 30 phút qua số điện thoại hoặc email bạn cung cấp.</p>
+        <a href="index.html" class="btn btn-outline" style="margin-top:16px;">Về Trang Chủ</a>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<!-- Working Hours -->
+<div class="hours-section">
+  <div class="container">
+    <div class="sec-header center mb-md">
+      <div class="sec-label"><i class="fas fa-clock"></i> Giờ Làm Việc</div>
+      <h2 class="sec-title">Chúng Tôi <span>Hỗ Trợ</span> Khi Nào?</h2>
+    </div>
+    <div class="hours-grid">
+      <div class="hours-card fade-in">
+        <h3><i class="fas fa-calendar-alt" style="color:var(--red);margin-right:8px;"></i> Lịch Hỗ Trợ Online</h3>
+        <div class="hours-row"><span class="day">Thứ 2 – Thứ 6</span><span class="time">8:00 – 21:00</span></div>
+        <div class="hours-row"><span class="day">Thứ 7</span><span class="time">8:00 – 18:00</span></div>
+        <div class="hours-row"><span class="day">Chủ Nhật</span><span class="closed">Nghỉ / Hỗ trợ khẩn cấp qua WhatsApp</span></div>
+      </div>
+      <div class="hours-card fade-in">
+        <h3><i class="fas fa-bolt" style="color:var(--red);margin-right:8px;"></i> Thời Gian Giao Voucher</h3>
+        <div class="hours-row"><span class="day">Trong giờ làm việc</span><span class="time">1 – 4 giờ</span></div>
+        <div class="hours-row"><span class="day">Ngoài giờ làm việc</span><span class="time">Sáng hôm sau</span></div>
+        <div class="hours-row"><span class="day">Đơn khẩn cấp</span><span class="time">Liên hệ trực tiếp qua WhatsApp</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo"><img src="assset/logo.png" alt="ITCert Hub" /></div>
+        <p>Chuyên cung cấp voucher và dump luyện thi chứng chỉ IT uy tín Việt Nam.</p>
+        <div class="footer-socials">
+          <a href="#" class="footer-social" title="Facebook" data-config="facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="footer-social" title="Messenger" data-config="messenger"><i class="fab fa-facebook-messenger"></i></a>
+          <a href="#" class="footer-social" title="Telegram Group" data-config="telegram"><i class="fab fa-telegram-plane"></i></a>
+          <a href="#" class="footer-social" title="Zalo" data-config="zalo"><span style="font-size:12px;font-weight:800;">Z</span></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Sản Phẩm</h4>
+        <ul>
+          <li><a href="voucher.html">Voucher Thi</a></li>
+          <li><a href="dump.html">Dump Luyện Thi</a></li>
+          <li><a href="blog.html">Blog & Mẹo</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Hỗ Trợ</h4>
+        <ul>
+          <li><a href="contact.html">Đặt Hàng</a></li>
+          <li><a href="faq.html">Câu Hỏi Thường Gặp</a></li>
+          <li><a href="contact.html">Chính Sách Hoàn Tiền</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Liên Hệ</h4>
+        <ul>
+          <li><a href="#" data-config="phone"><span data-config="phoneNumber">0912 345 678</span></a></li>
+          <li><a href="mailto:info@itcerthub.vn">info@itcerthub.vn</a></li>
+          <li><a href="#" data-config="messenger">Messenger</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 ITCert Hub. Tất cả quyền được bảo lưu.</p>
+    </div>
+  </div>
+</footer>
+
+<button class="back-to-top"><i class="fas fa-arrow-up"></i></button>
+
+<script src="js/config.js"></script>
+<script src="js/core.js"></script>
+<script>
+  // Product option selector
+  document.querySelectorAll('.product-option').forEach(opt => {
+    opt.addEventListener('click', () => {
+      document.querySelectorAll('.product-option').forEach(o => o.classList.remove('selected'));
+      opt.classList.add('selected');
+    });
+  });
+
+  // Form submit
+  document.getElementById('order-form')?.addEventListener('submit', function(e) {
+    e.preventDefault();
+    document.getElementById('order-form').style.display = 'none';
+    document.getElementById('form-success').style.display = 'block';
+  });
+</script>
+</body>
+</html>

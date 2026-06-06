@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lộ Trình Học CCNA Từ Zero đến Pass Trong 3 Tháng | ITCert Hub</title>
+  <meta name="description" content="Hướng dẫn chi tiết lộ trình tự học chứng chỉ Cisco CCNA 200-301 từ cơ bản đến nâng cao trong vòng 90 ngày. Các tài nguyên miễn phí, mẹo thi và giải pháp luyện dump hiệu quả." />
+  <link rel="icon" href="assset/logo.png" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/blog.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+<!-- ═══ SUPPORT WIDGET (CHAT POPUP) ═══ -->
+<div class="support-widget" id="support-widget">
+  <div class="support-popup" id="support-popup">
+    <div class="support-popup-header">
+      <div class="support-avatar">IT</div>
+      <div class="support-header-info">
+        <h4>Hỗ Trợ Trực Tuyến</h4>
+        <span>Phản hồi trong 5 phút</span>
+      </div>
+      <button class="support-close" id="support-close"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="support-popup-body">
+      <p class="support-greeting">Xin chào! Chúng tôi có thể giúp gì cho bạn? Hãy chọn một kênh liên hệ tiện lợi nhất phía dưới để trò chuyện cùng admin:</p>
+      
+      <div class="support-channels">
+        <a href="#" class="support-channel-btn sc-zalo" target="_blank" data-config="zalo">
+          <span class="sc-icon">Z</span>
+          <div class="sc-text">
+            <strong>Chat qua Zalo</strong>
+            <span>Hỗ trợ nhanh nhất 24/7</span>
+          </div>
+        </a>
+        <a href="#" class="support-channel-btn sc-messenger" target="_blank" data-config="messenger">
+          <i class="fab fa-facebook-messenger"></i>
+          <div class="sc-text">
+            <strong>Nhắn tin Messenger</strong>
+            <span>Hỗ trợ qua Facebook cá nhân</span>
+          </div>
+        </a>
+        <a href="#" class="support-channel-btn sc-fanpage" target="_blank" data-config="facebook">
+          <i class="fab fa-facebook"></i>
+          <div class="sc-text">
+            <strong>Truy cập Fanpage</strong>
+            <span>Cập nhật tin tức & ưu đãi</span>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="support-popup-footer">
+      <a href="#" data-config="phone"><i class="fas fa-phone-alt"></i> Hotline: <span data-config="phoneNumber">0912 345 678</span></a>
+    </div>
+  </div>
+  
+  <button class="support-trigger" id="support-trigger" aria-label="Hỗ trợ trực tuyến">
+    <i class="fas fa-comments chat-open-icon"></i>
+    <i class="fas fa-times chat-close-icon" style="display:none;"></i>
+    <span class="support-pulse"></span>
+  </button>
+</div>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <div class="container topbar-inner">
+    <div class="topbar-left">
+      <span><i class="fas fa-envelope"></i> <span data-config="email">info@itcerthub.vn</span></span>
+      <span><i class="fas fa-phone"></i> <span data-config="phoneNumber">0912 345 678</span></span>
+    </div>
+    <div class="topbar-right">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-tiktok"></i></a>
+    </div>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header class="header" id="header">
+  <div class="container header-inner">
+    <a href="index.html" class="logo">
+      <img src="assset/logo.png" alt="ITCert Hub Logo" />
+    </a>
+    <nav class="nav">
+      <ul class="nav-list">
+        <li><a href="index.html" class="nav-link">Trang Chủ</a></li>
+        <li><a href="voucher.html" class="nav-link">Voucher</a></li>
+        <li><a href="dump.html" class="nav-link">Dump / Tài Liệu</a></li>
+        <li><a href="blog.html" class="nav-link active">Blog & Mẹo</a></li>
+        <li><a href="faq.html" class="nav-link">FAQ</a></li>
+        <li><a href="contact.html" class="nav-link">Liên Hệ</a></li>
+      </ul>
+    </nav>
+    <div class="header-actions">
+      <a href="contact.html" class="btn btn-primary btn-sm"><i class="fas fa-ticket"></i> Đặt Voucher</a>
+      <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="nav-overlay" id="nav-overlay"></div>
+<div class="nav-panel" id="nav-panel">
+  <button class="nav-panel-close" id="nav-close"><i class="fas fa-times"></i></button>
+  <a href="index.html"   class="nav-link">Trang Chủ</a>
+  <a href="voucher.html" class="nav-link">Voucher</a>
+  <a href="dump.html"    class="nav-link">Dump / Tài Liệu</a>
+  <a href="blog.html"    class="nav-link">Blog & Mẹo</a>
+  <a href="faq.html"     class="nav-link">FAQ</a>
+  <a href="contact.html" class="nav-link">Liên Hệ</a>
+  <div style="margin-top:20px;"><a href="contact.html" class="btn btn-primary btn-full">Đặt Voucher Ngay</a></div>
+</div>
+
+<!-- POST HEADER -->
+<div class="post-header">
+  <div class="container">
+    <nav class="breadcrumb">
+      <a href="index.html">Trang chủ</a>
+      <i class="fas fa-chevron-right"></i>
+      <a href="blog.html">Blog & Mẹo Thi</a>
+      <i class="fas fa-chevron-right"></i>
+      <span>Lộ Trình CCNA</span>
+    </nav>
+    <span class="post-cat-tag cat-guide" style="position:static;display:inline-block;margin-bottom:12px;">Lộ Trình</span>
+    <h1>Lộ Trình Học CCNA Từ Zero đến Pass Trong 3 Tháng</h1>
+    <div class="post-header-meta">
+      <span><i class="fas fa-calendar"></i> Đăng ngày 02/06/2026</span>
+      <span><i class="fas fa-user"></i> Tác giả: Admin ITCert Hub</span>
+      <span><i class="fas fa-clock"></i> 8 phút đọc</span>
+      <span><i class="fas fa-eye"></i> 1,240 lượt xem</span>
+    </div>
+  </div>
+</div>
+
+<!-- POST LAYOUT -->
+<div class="container">
+  <div class="post-content-wrap">
+    
+    <!-- Main Article -->
+    <article class="post-content">
+      <p>CCNA (Cisco Certified Network Associate) 200-301 là một trong những chứng chỉ mạng phổ biến và có giá trị nhất thế giới cho người mới bắt đầu. Nếu bạn đang muốn bước chân vào ngành Network hoặc System Admin nhưng xuất phát từ con số 0, thì bài viết này dành cho bạn. Dưới đây là lộ trình 3 tháng tự học bài bản giúp bạn tự tin vượt qua kỳ thi và tích lũy đủ kiến thức thực hành.</p>
+
+      <blockquote>
+        "Học CCNA không chỉ để lấy chứng chỉ, mà quan trọng hơn là hiểu bản chất cách các thiết bị mạng giao tiếp với nhau trong thế giới thực."
+      </blockquote>
+
+      <h2>Tháng Thứ Nhất: Xây Dựng Nền Tảng (Tuần 1 – Tuần 4)</h2>
+      <p>Nhiệm vụ trọng tâm của tháng đầu tiên là hiểu các khái niệm lý thuyết cơ bản nhất của mạng máy tính. Đừng vội vàng cấu hình thiết bị khi bạn chưa nắm rõ lý thuyết.</p>
+      
+      <h3>Tuần 1: Các Mô Hình Mạng & Thiết Bị</h3>
+      <p>Làm quen với mô hình OSI 7 lớp và mô hình TCP/IP. Đây là xương sống của toàn bộ chương trình mạng. Bạn cần nắm được chức năng của từng tầng và các giao thức hoạt động tại đó. Phân biệt được Hub, Switch, Router và hiểu cách chúng chuyển tiếp gói tin.</p>
+      
+      <h3>Tuần 2 & 3: Địa Chỉ IPv4, IPv6 và Chia Mạng Con (Subnetting)</h3>
+      <p>Đây là phần khó nhằn nhất đối với người mới bắt đầu. Bạn phải làm chủ kỹ thuật chia mạng con IPv4 nhanh bằng tay (VLSM). Hãy luyện tập tính toán subnet mask, số lượng host hữu dụng, địa chỉ mạng (network address) và địa chỉ quảng bá (broadcast address).</p>
+      
+      <h3>Tuần 4: Giới thiệu Cisco CLI và Cấu hình Switch cơ bản</h3>
+      <p>Tải phần mềm <code>Cisco Packet Tracer</code> – công cụ giả lập mạng tốt nhất dành cho người học CCNA. Học cách thao tác trong chế độ CLI (Command Line Interface), đặt tên thiết bị, cấu hình mật khẩu console, enable và telnet/ssh bảo mật.</p>
+
+      <h2>Tháng Thứ Hai: Định Tuyến & Chuyển Mạch (Tuần 5 – Tuần 8)</h2>
+      <p>Tháng thứ hai là thời gian bạn tập trung vào cấu hình các công nghệ lõi thường gặp trong môi trường doanh nghiệp.</p>
+
+      <h3>Tuần 5: Công nghệ Switch (VLAN, Trunking & Spanning Tree Protocol)</h3>
+      <ul>
+        <li>Cấu hình VLAN để chia nhóm mạng ảo.</li>
+        <li>Học về giao thức Trunking (802.1Q) để truyền tải nhiều VLAN qua 1 đường truyền vật lý.</li>
+        <li>Tìm hiểu Spanning Tree Protocol (STP) – giao thức chống loop trong mạng Switch.</li>
+      </ul>
+
+      <h3>Tuần 6 & 7: Định Tuyến (Routing) & Giao thức OSPF</h3>
+      <p>Tìm hiểu cơ chế hoạt động của Router. Thực hành định tuyến tĩnh (Static Route) và định tuyến động với <code>OSPFv2</code> (Open Shortest Path First) cho môi trường Single Area. Cấu hình định tuyến giữa các VLAN bằng kỹ thuật Router-on-a-Stick.</p>
+
+      <h3>Tuần 8: Dịch Vụ Mạng (DHCP, NAT & ACL)</h3>
+      <p>Học cách triển khai dịch vụ tự động cấp IP (DHCP), kỹ thuật dịch địa chỉ NAT (Static, Dynamic, PAT) để các máy mạng nội bộ ra được Internet, và sử dụng danh sách kiểm soát truy cập (Access Control List - ACL) để lọc traffic bảo mật cơ bản.</p>
+
+      <h2>Tháng Thứ Ba: Luyện Đề & Chuẩn Bị Thi (Tuần 9 – Tuần 12)</h2>
+      <p>Đây là giai đoạn nước rút để bạn kiểm tra lại kiến thức và tối ưu hóa điểm số của mình.</p>
+
+      <h3>Tuần 9 & 10: Tổng Hợp Lab & Ôn Luyện Lý Thuyết Nâng Cao</h3>
+      <p>Tự thiết kế một mô hình mạng doanh nghiệp thu nhỏ có đầy đủ Switch (VLAN, STP), Router (OSPF, NAT, DHCP, ACL) trên Packet Tracer và cấu hình thông mạng từ đầu đến cuối. Tìm hiểu các phần lý thuyết mới trong chương trình CCNA 200-301 như Automation, Programmability (JSON, REST API, Ansible, Chef, Puppet) và các công nghệ Wireless (WLC, AP).</p>
+
+      <h3>Tuần 11 & 12: Luyện Đề Thi Thử (Luyện Dump)</h3>
+      <p>Sử dụng đề thi thử (Dump) của <strong>ITCert Hub</strong> để kiểm tra sự sẵn sàng. Bộ dump chứa các câu hỏi rất sát đề thi thật.</p>
+      <ul>
+        <li>Làm đề thi thử với thời gian khắt khe để quen áp lực phòng thi.</li>
+        <li>Ghi chép lại các câu hỏi làm sai, tra cứu lại lý thuyết để hiểu vì sao sai thay vì chỉ cố nhớ đáp án.</li>
+        <li>Đảm bảo điểm thi thử ổn định ở mức 85-90% trước khi đăng ký thi thật.</li>
+      </ul>
+
+      <h2>Các Tài Nguyên Học Tập Khuyên Dùng</h2>
+      <ul>
+        <li><strong>Khóa học Video:</strong> Jeremy's IT Lab (miễn phí trên YouTube) hoặc khóa CCNA của Neil Anderson (Udemy).</li>
+        <li><strong>Sách:</strong> CCNA 200-301 Official Cert Guide của tác giả Wendell Odom.</li>
+        <li><strong>Mã Voucher thi giá tốt:</strong> Xem tại trang <a href="voucher.html">Voucher ITCert Hub</a> để nhận mã giảm giá lên đến 30%.</li>
+        <li><strong>Đề ôn luyện:</strong> Bộ đề thi thử <a href="dump.html">Cisco Dump CCNA</a> được cập nhật mới nhất.</li>
+      </ul>
+
+      <div class="post-tags">
+        <span class="tag-pill">CCNA</span>
+        <span class="tag-pill">Cisco</span>
+        <span class="tag-pill">Lộ Trình</span>
+        <span class="tag-pill">Tự Học IT</span>
+        <span class="tag-pill">Dump Luyện Thi</span>
+      </div>
+
+      <!-- Related Posts Section -->
+      <div class="related-posts">
+        <h3>Bài viết liên quan</h3>
+        <div class="related-grid">
+          
+          <div class="post-card" data-cat="tips" style="flex-direction:column;">
+            <div class="post-thumb" style="background:linear-gradient(135deg,#060810,#0a1228);height:120px;">
+              <i class="fab fa-microsoft" style="font-size:32px;"></i>
+              <span class="post-cat-tag cat-tips">Mẹo Thi</span>
+            </div>
+            <div class="post-body" style="padding:14px;">
+              <div class="post-meta" style="font-size:11px;">
+                <span><i class="fas fa-calendar"></i> 28/05/2026</span>
+              </div>
+              <h4 style="font-size:14px;margin-top:6px;"><a href="blog-post.html" class="post-title-link">10 Mẹo Vàng Để Pass AZ-900 Ngay Lần Đầu</a></h4>
+            </div>
+          </div>
+
+          <div class="post-card" data-cat="howto" style="flex-direction:column;">
+            <div class="post-thumb" style="background:linear-gradient(135deg,#060d0a,#0a2a1a);height:120px;">
+              <i class="fas fa-book-open" style="font-size:32px;"></i>
+              <span class="post-cat-tag cat-tips">Hướng Dẫn</span>
+            </div>
+            <div class="post-body" style="padding:14px;">
+              <div class="post-meta" style="font-size:11px;">
+                <span><i class="fas fa-calendar"></i> 10/05/2026</span>
+              </div>
+              <h4 style="font-size:14px;margin-top:6px;"><a href="blog-post.html" class="post-title-link">Cách Sử Dụng Dump Hiệu Quả Nhất</a></h4>
+            </div>
+          </div>
+
+          <div class="post-card" data-cat="review" style="flex-direction:column;">
+            <div class="post-thumb" style="background:linear-gradient(135deg,#0d060d,#250a25);height:120px;">
+              <i class="fas fa-shield-halved" style="font-size:32px;"></i>
+              <span class="post-cat-tag cat-review">Đánh Giá</span>
+            </div>
+            <div class="post-body" style="padding:14px;">
+              <div class="post-meta" style="font-size:11px;">
+                <span><i class="fas fa-calendar"></i> 20/05/2026</span>
+              </div>
+              <h4 style="font-size:14px;margin-top:6px;"><a href="blog-post.html" class="post-title-link">So Sánh Security+ vs CEH Chi Tiết</a></h4>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </article>
+
+    <!-- Sidebar -->
+    <aside class="blog-sidebar">
+      
+      <!-- Popular posts -->
+      <div class="sidebar-widget">
+        <div class="widget-header"><i class="fas fa-fire"></i> Bài Viết Nổi Bật</div>
+        <div class="widget-body">
+          <div class="popular-list">
+            <div class="popular-item">
+              <span class="pop-num">01</span>
+              <div>
+                <div class="pop-title"><a href="blog-post.html">Cách Dùng Dump Đúng Cách</a></div>
+                <div class="pop-meta">1,432 lượt xem</div>
+              </div>
+            </div>
+            <div class="popular-item">
+              <span class="pop-num">02</span>
+              <div>
+                <div class="pop-title"><a href="blog-post.html">Lộ Trình CCNA 3 Tháng</a></div>
+                <div class="pop-meta">1,240 lượt xem</div>
+              </div>
+            </div>
+            <div class="popular-item">
+              <span class="pop-num">03</span>
+              <div>
+                <div class="pop-title"><a href="blog-post.html">AWS SAA-C03 Cập Nhật 2026</a></div>
+                <div class="pop-meta">921 lượt xem</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tag cloud -->
+      <div class="sidebar-widget">
+        <div class="widget-header"><i class="fas fa-tags"></i> Tags</div>
+        <div class="widget-body">
+          <div class="tag-cloud">
+            <span class="tag-pill">CCNA</span>
+            <span class="tag-pill">AZ-900</span>
+            <span class="tag-pill">AWS SAA</span>
+            <span class="tag-pill">Security+</span>
+            <span class="tag-pill">Dump</span>
+            <span class="tag-pill">Voucher</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Newsletter Widget -->
+      <div class="sidebar-widget" style="border-color:var(--red-border);">
+        <div class="widget-header"><i class="fas fa-bell"></i> Đăng Ký Bản Tin</div>
+        <div class="widget-body">
+          <form id="newsletter-form" class="newsletter-form">
+            <p>Nhận bài viết chia sẻ, thông tin cập nhật đề thi và khuyến mãi sớm nhất.</p>
+            <input type="email" class="form-control" placeholder="Email của bạn..." required />
+            <button type="submit" class="btn btn-primary btn-full"><i class="fas fa-paper-plane"></i> Đăng Ký</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Promo Box -->
+      <div class="sidebar-widget" style="background:var(--red-bg);border-color:var(--red-border);">
+        <div class="widget-body" style="text-align:center;">
+          <div style="font-size:32px;margin-bottom:10px;">🎫</div>
+          <h4 style="margin-bottom:8px;">Voucher Thi CCNA Giá Rẻ</h4>
+          <p style="font-size:13px;color:var(--text-muted);margin-bottom:14px;">Mua Voucher Cisco 200-301 tiết kiệm ngay 1.300.000₫.</p>
+          <a href="voucher.html#cisco" class="btn btn-primary btn-full">Xem Ngay <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+    </aside>
+
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo"><img src="assset/logo.png" alt="ITCert Hub" /></div>
+        <p>Chuyên cung cấp voucher và dump luyện thi chứng chỉ IT uy tín Việt Nam.</p>
+        <div class="footer-socials">
+          <a href="#" class="footer-social" title="Facebook" data-config="facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="footer-social" title="Messenger" data-config="messenger"><i class="fab fa-facebook-messenger"></i></a>
+          <a href="#" class="footer-social" title="Telegram Group" data-config="telegram"><i class="fab fa-telegram-plane"></i></a>
+          <a href="#" class="footer-social" title="Zalo" data-config="zalo"><span style="font-size:12px;font-weight:800;">Z</span></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Sản Phẩm</h4>
+        <ul>
+          <li><a href="voucher.html">Voucher Thi</a></li>
+          <li><a href="dump.html">Dump Luyện Thi</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="contact.html">Liên Hệ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Liên Kết Nhanh</h4>
+        <ul>
+          <li><a href="blog.html">Blog & Mẹo Thi</a></li>
+          <li><a href="faq.html">Câu Hỏi Thường Gặp</a></li>
+          <li><a href="contact.html">Chính Sách Bảo Hành</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Liên Hệ</h4>
+        <ul>
+          <li><a href="#" data-config="phone"><span data-config="phoneNumber">0912 345 678</span></a></li>
+          <li><a href="mailto:info@itcerthub.vn">info@itcerthub.vn</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 ITCert Hub. Tất cả quyền được bảo lưu.</p>
+    </div>
+  </div>
+</footer>
+
+<button class="back-to-top"><i class="fas fa-arrow-up"></i></button>
+
+<script src="js/config.js"></script>
+<script src="js/core.js"></script>
+<script src="js/blog.js"></script>
+</body>
+</html>

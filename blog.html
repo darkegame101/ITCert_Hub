@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog IT – Mẹo Thi & Kinh Nghiệm Chứng Chỉ | ITCert Hub</title>
+  <meta name="description" content="Blog chia sẻ kinh nghiệm thi chứng chỉ IT: lộ trình học CCNA, mẹo pass AZ-900, AWS SAA-C03, Security+. Cập nhật tin tức đề thi mới nhất." />
+  <link rel="icon" href="assset/logo.png" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/blog.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+<!-- ═══ SUPPORT WIDGET (CHAT POPUP) ═══ -->
+<div class="support-widget" id="support-widget">
+  <div class="support-popup" id="support-popup">
+    <div class="support-popup-header">
+      <div class="support-avatar">IT</div>
+      <div class="support-header-info">
+        <h4>Hỗ Trợ Trực Tuyến</h4>
+        <span>Phản hồi trong 5 phút</span>
+      </div>
+      <button class="support-close" id="support-close"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="support-popup-body">
+      <p class="support-greeting">Xin chào! Chúng tôi có thể giúp gì cho bạn? Hãy chọn một kênh liên hệ tiện lợi nhất phía dưới để trò chuyện cùng admin:</p>
+      
+      <div class="support-channels">
+        <a href="#" class="support-channel-btn sc-zalo" target="_blank" data-config="zalo">
+          <span class="sc-icon">Z</span>
+          <div class="sc-text">
+            <strong>Chat qua Zalo</strong>
+            <span>Hỗ trợ nhanh nhất 24/7</span>
+          </div>
+        </a>
+        <a href="#" class="support-channel-btn sc-messenger" target="_blank" data-config="messenger">
+          <i class="fab fa-facebook-messenger"></i>
+          <div class="sc-text">
+            <strong>Nhắn tin Messenger</strong>
+            <span>Hỗ trợ qua Facebook cá nhân</span>
+          </div>
+        </a>
+        <a href="#" class="support-channel-btn sc-fanpage" target="_blank" data-config="facebook">
+          <i class="fab fa-facebook"></i>
+          <div class="sc-text">
+            <strong>Truy cập Fanpage</strong>
+            <span>Cập nhật tin tức & ưu đãi</span>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="support-popup-footer">
+      <a href="#" data-config="phone"><i class="fas fa-phone-alt"></i> Hotline: <span data-config="phoneNumber">0912 345 678</span></a>
+    </div>
+  </div>
+  
+  <button class="support-trigger" id="support-trigger" aria-label="Hỗ trợ trực tuyến">
+    <i class="fas fa-comments chat-open-icon"></i>
+    <i class="fas fa-times chat-close-icon" style="display:none;"></i>
+    <span class="support-pulse"></span>
+  </button>
+</div>
+
+<div class="topbar">
+  <div class="container topbar-inner">
+    <div class="topbar-left">
+      <span><i class="fas fa-envelope"></i> <span data-config="email">info@itcerthub.vn</span></span>
+      <span><i class="fas fa-phone"></i> <span data-config="phoneNumber">0912 345 678</span></span>
+    </div>
+    <div class="topbar-right">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+    </div>
+  </div>
+</div>
+
+<header class="header" id="header">
+  <div class="container header-inner">
+    <a href="index.html" class="logo"><img src="assset/logo.png" alt="ITCert Hub Logo" /></a>
+    <nav class="nav">
+      <ul class="nav-list">
+        <li><a href="index.html"   class="nav-link">Trang Chủ</a></li>
+        <li><a href="voucher.html" class="nav-link">Voucher</a></li>
+        <li><a href="dump.html"    class="nav-link">Dump / Tài Liệu</a></li>
+        <li><a href="blog.html"    class="nav-link active">Blog & Mẹo</a></li>
+        <li><a href="faq.html"     class="nav-link">FAQ</a></li>
+        <li><a href="contact.html" class="nav-link">Liên Hệ</a></li>
+      </ul>
+    </nav>
+    <div class="header-actions">
+      <a href="contact.html" class="btn btn-primary btn-sm"><i class="fas fa-ticket"></i> Đặt Voucher</a>
+      <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="nav-overlay" id="nav-overlay"></div>
+<div class="nav-panel" id="nav-panel">
+  <button class="nav-panel-close" id="nav-close"><i class="fas fa-times"></i></button>
+  <a href="index.html"   class="nav-link">Trang Chủ</a>
+  <a href="voucher.html" class="nav-link">Voucher</a>
+  <a href="dump.html"    class="nav-link">Dump / Tài Liệu</a>
+  <a href="blog.html"    class="nav-link">Blog & Mẹo</a>
+  <a href="faq.html"     class="nav-link">FAQ</a>
+  <a href="contact.html" class="nav-link">Liên Hệ</a>
+  <div style="margin-top:20px;"><a href="contact.html" class="btn btn-primary btn-full">Đặt Voucher Ngay</a></div>
+</div>
+
+<!-- Hero -->
+<div class="blog-hero">
+  <div class="container">
+    <nav class="breadcrumb">
+      <a href="index.html">Trang chủ</a>
+      <i class="fas fa-chevron-right"></i>
+      <span>Blog & Mẹo Thi</span>
+    </nav>
+    <div class="sec-label"><i class="fas fa-rss"></i> Blog ITCert Hub</div>
+    <h1>Mẹo Thi & <span style="color:var(--red);">Kinh Nghiệm IT</span></h1>
+    <p>Chia sẻ lộ trình học, mẹo pass chứng chỉ, tin tức đề thi cập nhật từ cộng đồng</p>
+  </div>
+</div>
+
+<main class="section">
+  <div class="container">
+
+    <!-- Search + Category Filter -->
+    <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-bottom:20px;">
+      <div class="search-box" style="max-width:300px;">
+        <input type="text" id="blog-search" placeholder="Tìm bài viết..." />
+        <i class="fas fa-search"></i>
+      </div>
+    </div>
+
+    <div class="blog-cat-tabs">
+      <button class="cat-tab active" data-cat="all">Tất Cả</button>
+      <button class="cat-tab" data-cat="guide">Lộ Trình</button>
+      <button class="cat-tab" data-cat="tips">Mẹo Thi</button>
+      <button class="cat-tab" data-cat="review">Đánh Giá</button>
+      <button class="cat-tab" data-cat="news">Tin Tức</button>
+      <button class="cat-tab" data-cat="howto">Hướng Dẫn</button>
+    </div>
+
+    <div class="blog-layout">
+      <!-- Posts -->
+      <div class="post-list">
+
+        <article class="post-card featured fade-in" data-cat="guide">
+          <div class="post-thumb" style="background:linear-gradient(135deg,#0d0608,#2a0a0e);">
+            <i class="fas fa-route"></i>
+            <span class="post-cat-tag cat-guide">Lộ Trình</span>
+          </div>
+          <div class="post-body">
+            <div class="post-meta">
+              <span><i class="fas fa-calendar"></i> 02/06/2026</span>
+              <span><i class="fas fa-clock"></i> 8 phút đọc</span>
+              <span><i class="fas fa-eye"></i> 1,240 lượt xem</span>
+            </div>
+            <h2><a href="blog-post.html" class="post-title-link">Lộ Trình Học CCNA Từ Zero đến Pass Trong 3 Tháng</a></h2>
+            <p class="post-excerpt">Hướng dẫn chi tiết lộ trình học CCNA 200-301 cho người mới bắt đầu: tài liệu cần có, lịch học hàng ngày, cách luyện lab Packet Tracer và chiến thuật thi hiệu quả. Bao gồm danh sách tài nguyên miễn phí tốt nhất và cách kết hợp dump hợp lý...</p>
+            <div class="post-footer">
+              <div class="post-author">
+                <div class="post-author-av">AD</div>
+                <span>Admin ITCert Hub</span>
+              </div>
+              <a href="blog-post.html" class="post-readmore">Đọc Tiếp <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="post-card fade-in" data-cat="tips">
+          <div class="post-thumb" style="background:linear-gradient(135deg,#060810,#0a1228);width:200px;min-height:130px;">
+            <i class="fab fa-microsoft"></i>
+            <span class="post-cat-tag cat-tips">Mẹo Thi</span>
+          </div>
+          <div class="post-body">
+            <div class="post-meta">
+              <span><i class="fas fa-calendar"></i> 28/05/2026</span>
+              <span><i class="fas fa-clock"></i> 5 phút</span>
+              <span><i class="fas fa-eye"></i> 876</span>
+            </div>
+            <h3><a href="blog-post.html" class="post-title-link">10 Mẹo Vàng Để Pass AZ-900 Ngay Lần Đầu</a></h3>
+            <p class="post-excerpt">Những kinh nghiệm thực tế từ hàng trăm học viên đã pass AZ-900. Tâm lý thi, cách quản lý thời gian và các domain quan trọng nhất...</p>
+            <div class="post-footer">
+              <div class="post-author"><div class="post-author-av">NH</div><span>Nguyễn Hùng</span></div>
+              <a href="blog-post.html" class="post-readmore">Đọc <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="post-card fade-in" data-cat="news">
+          <div class="post-thumb" style="background:linear-gradient(135deg,#0d0a04,#2a2000);width:200px;min-height:130px;">
+            <i class="fab fa-aws"></i>
+            <span class="post-cat-tag cat-news">Tin Tức</span>
+          </div>
+          <div class="post-body">
+            <div class="post-meta">
+              <span><i class="fas fa-calendar"></i> 15/05/2026</span>
+              <span><i class="fas fa-clock"></i> 4 phút</span>
+              <span><i class="fas fa-eye"></i> 921</span>
+            </div>
+            <h3><a href="blog-post.html" class="post-title-link">AWS SAA-C03 Cập Nhật Đề Thi Mới – Thay Đổi Quan Trọng 2026</a></h3>
+            <p class="post-excerpt">AWS vừa cập nhật cấu trúc đề thi SAA-C03 với nhiều thay đổi về domain phân bổ và dạng câu hỏi mới...</p>
+            <div class="post-footer">
+              <div class="post-author"><div class="post-author-av">AD</div><span>Admin ITCert Hub</span></div>
+              <a href="blog-post.html" class="post-readmore">Đọc <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="post-card fade-in" data-cat="review">
+          <div class="post-thumb" style="background:linear-gradient(135deg,#0d060d,#250a25);width:200px;min-height:130px;">
+            <i class="fas fa-shield-halved"></i>
+            <span class="post-cat-tag cat-review">Đánh Giá</span>
+          </div>
+          <div class="post-body">
+            <div class="post-meta">
+              <span><i class="fas fa-calendar"></i> 20/05/2026</span>
+              <span><i class="fas fa-clock"></i> 6 phút</span>
+              <span><i class="fas fa-eye"></i> 654</span>
+            </div>
+            <h3><a href="blog-post.html" class="post-title-link">So Sánh Security+ vs CEH: Nên Thi Cái Nào Trước?</a></h3>
+            <p class="post-excerpt">Phân tích chi tiết hai chứng chỉ bảo mật hàng đầu. Giá trị, độ khó, chi phí và lộ trình phù hợp cho từng đối tượng...</p>
+            <div class="post-footer">
+              <div class="post-author"><div class="post-author-av">TL</div><span>Trần Linh</span></div>
+              <a href="blog-post.html" class="post-readmore">Đọc <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="post-card fade-in" data-cat="howto">
+          <div class="post-thumb" style="background:linear-gradient(135deg,#060d0a,#0a2a1a);width:200px;min-height:130px;">
+            <i class="fas fa-book-open"></i>
+            <span class="post-cat-tag cat-tips">Hướng Dẫn</span>
+          </div>
+          <div class="post-body">
+            <div class="post-meta">
+              <span><i class="fas fa-calendar"></i> 10/05/2026</span>
+              <span><i class="fas fa-clock"></i> 10 phút</span>
+              <span><i class="fas fa-eye"></i> 1,432</span>
+            </div>
+            <h3><a href="blog-post.html" class="post-title-link">Cách Sử Dụng Dump Hiệu Quả – Học Đúng Cách Để Pass Cao</a></h3>
+            <p class="post-excerpt">Nhiều người dùng dump sai cách khiến tỷ lệ pass thấp. Bài viết hướng dẫn phương pháp kết hợp dump với tài liệu chính thống...</p>
+            <div class="post-footer">
+              <div class="post-author"><div class="post-author-av">PM</div><span>Phạm Minh</span></div>
+              <a href="blog-post.html" class="post-readmore">Đọc <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Pagination -->
+        <div class="pagination">
+          <button class="page-btn active">1</button>
+          <button class="page-btn">2</button>
+          <button class="page-btn">3</button>
+          <button class="page-btn"><i class="fas fa-chevron-right"></i></button>
+        </div>
+      </div>
+
+      <!-- Sidebar -->
+      <aside class="blog-sidebar">
+
+        <div class="sidebar-widget">
+          <div class="widget-header"><i class="fas fa-fire"></i> Bài Viết Nổi Bật</div>
+          <div class="widget-body">
+            <div class="popular-list">
+              <div class="popular-item">
+                <span class="pop-num">01</span>
+                <div><div class="pop-title"><a href="blog-post.html">Cách Dùng Dump Đúng Cách</a></div><div class="pop-meta">1,432 lượt xem</div></div>
+              </div>
+              <div class="popular-item">
+                <span class="pop-num">02</span>
+                <div><div class="pop-title"><a href="blog-post.html">Lộ Trình CCNA 3 Tháng</a></div><div class="pop-meta">1,240 lượt xem</div></div>
+              </div>
+              <div class="popular-item">
+                <span class="pop-num">03</span>
+                <div><div class="pop-title"><a href="blog-post.html">AWS SAA-C03 Cập Nhật 2026</a></div><div class="pop-meta">921 lượt xem</div></div>
+              </div>
+              <div class="popular-item">
+                <span class="pop-num">04</span>
+                <div><div class="pop-title"><a href="blog-post.html">10 Mẹo Pass AZ-900</a></div><div class="pop-meta">876 lượt xem</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="sidebar-widget">
+          <div class="widget-header"><i class="fas fa-tags"></i> Tags</div>
+          <div class="widget-body">
+            <div class="tag-cloud">
+              <span class="tag-pill">CCNA</span>
+              <span class="tag-pill">AZ-900</span>
+              <span class="tag-pill">AWS SAA</span>
+              <span class="tag-pill">Security+</span>
+              <span class="tag-pill">CEH</span>
+              <span class="tag-pill">Dump</span>
+              <span class="tag-pill">Voucher</span>
+              <span class="tag-pill">CCNP</span>
+              <span class="tag-pill">Cloud</span>
+              <span class="tag-pill">CompTIA</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="sidebar-widget" style="border-color:var(--red-border);">
+          <div class="widget-header"><i class="fas fa-bell"></i> Đăng Ký Nhận Bài Mới</div>
+          <div class="widget-body">
+            <form id="newsletter-form" class="newsletter-form">
+              <p>Nhận thông báo khi có bài viết mới, khuyến mãi và cập nhật đề thi.</p>
+              <input type="email" class="form-control" placeholder="Email của bạn..." required />
+              <button type="submit" class="btn btn-primary btn-full"><i class="fas fa-paper-plane"></i> Đăng Ký</button>
+            </form>
+          </div>
+        </div>
+
+        <!-- Promo box -->
+        <div class="sidebar-widget" style="background:var(--red-bg);border-color:var(--red-border);">
+          <div class="widget-body" style="text-align:center;">
+            <div style="font-size:32px;margin-bottom:10px;">🎫</div>
+            <h4 style="margin-bottom:8px;">Mua Voucher Hôm Nay</h4>
+            <p style="font-size:13px;color:var(--text-muted);margin-bottom:14px;">Tiết kiệm đến 40% so với giá gốc</p>
+            <a href="voucher.html" class="btn btn-primary btn-full">Xem Voucher <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+
+      </aside>
+    </div>
+
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo"><img src="assset/logo.png" alt="ITCert Hub" /></div>
+        <p>Chuyên cung cấp voucher và dump luyện thi chứng chỉ IT uy tín Việt Nam.</p>
+        <div class="footer-socials">
+          <a href="#" class="footer-social" title="Facebook" data-config="facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="footer-social" title="Messenger" data-config="messenger"><i class="fab fa-facebook-messenger"></i></a>
+          <a href="#" class="footer-social" title="Telegram Group" data-config="telegram"><i class="fab fa-telegram-plane"></i></a>
+          <a href="#" class="footer-social" title="Zalo" data-config="zalo"><span style="font-size:12px;font-weight:800;">Z</span></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Chủ Đề Blog</h4>
+        <ul>
+          <li><a href="#">Lộ Trình IT</a></li>
+          <li><a href="#">Mẹo Thi Chứng Chỉ</a></li>
+          <li><a href="#">Đánh Giá Chứng Chỉ</a></li>
+          <li><a href="#">Tin Tức IT</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Sản Phẩm</h4>
+        <ul>
+          <li><a href="voucher.html">Voucher Thi</a></li>
+          <li><a href="dump.html">Dump Luyện Thi</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="contact.html">Liên Hệ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Liên Hệ</h4>
+        <ul>
+          <li><a href="#" data-config="phone"><span data-config="phoneNumber">0912 345 678</span></a></li>
+          <li><a href="mailto:info@itcerthub.vn">info@itcerthub.vn</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 ITCert Hub. Tất cả quyền được bảo lưu.</p>
+    </div>
+  </div>
+</footer>
+
+<button class="back-to-top"><i class="fas fa-arrow-up"></i></button>
+
+<script src="js/config.js"></script>
+<script src="js/core.js"></script>
+<script src="js/blog.js"></script>
+</body>
+</html>

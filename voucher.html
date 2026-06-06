@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mua Voucher Chứng Chỉ IT – Cisco, Azure, AWS, CompTIA | ITCert Hub</title>
+  <meta name="description" content="Mua voucher thi chứng chỉ IT chính hãng: CCNA, AZ-900, AZ-104, AWS SAA-C03, Security+, CEH... Giảm đến 40%, giao trong 1-4 giờ, hỗ trợ đăng ký thi." />
+  <link rel="icon" href="assset/logo.png" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/voucher.css" />  <!-- CHỈ trang này -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+<!-- ═══ SUPPORT WIDGET (CHAT POPUP) ═══ -->
+<div class="support-widget" id="support-widget">
+  <div class="support-popup" id="support-popup">
+    <div class="support-popup-header">
+      <div class="support-avatar">IT</div>
+      <div class="support-header-info">
+        <h4>Hỗ Trợ Trực Tuyến</h4>
+        <span>Phản hồi trong 5 phút</span>
+      </div>
+      <button class="support-close" id="support-close"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="support-popup-body">
+      <p class="support-greeting">Xin chào! Chúng tôi có thể giúp gì cho bạn? Hãy chọn một kênh liên hệ tiện lợi nhất phía dưới để trò chuyện cùng admin:</p>
+      
+      <div class="support-channels">
+        <a href="#" class="support-channel-btn sc-zalo" target="_blank" data-config="zalo">
+          <span class="sc-icon">Z</span>
+          <div class="sc-text">
+            <strong>Chat qua Zalo</strong>
+            <span>Hỗ trợ nhanh nhất 24/7</span>
+          </div>
+        </a>
+        <a href="#" class="support-channel-btn sc-messenger" target="_blank" data-config="messenger">
+          <i class="fab fa-facebook-messenger"></i>
+          <div class="sc-text">
+            <strong>Nhắn tin Messenger</strong>
+            <span>Hỗ trợ qua Facebook cá nhân</span>
+          </div>
+        </a>
+        <a href="#" class="support-channel-btn sc-fanpage" target="_blank" data-config="facebook">
+          <i class="fab fa-facebook"></i>
+          <div class="sc-text">
+            <strong>Truy cập Fanpage</strong>
+            <span>Cập nhật tin tức & ưu đãi</span>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="support-popup-footer">
+      <a href="#" data-config="phone"><i class="fas fa-phone-alt"></i> Hotline: <span data-config="phoneNumber">0912 345 678</span></a>
+    </div>
+  </div>
+  
+  <button class="support-trigger" id="support-trigger" aria-label="Hỗ trợ trực tuyến">
+    <i class="fas fa-comments chat-open-icon"></i>
+    <i class="fas fa-times chat-close-icon" style="display:none;"></i>
+    <span class="support-pulse"></span>
+  </button>
+</div>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <div class="container topbar-inner">
+    <div class="topbar-left">
+      <span><i class="fas fa-envelope"></i> <span data-config="email">info@itcerthub.vn</span></span>
+      <span><i class="fas fa-phone"></i> <span data-config="phoneNumber">0912 345 678</span></span>
+      <span><i class="fas fa-clock"></i> T2–T7: 8:00 – 21:00</span>
+    </div>
+    <div class="topbar-right">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-tiktok"></i></a>
+    </div>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header class="header" id="header">
+  <div class="container header-inner">
+    <a href="index.html" class="logo">
+      <img src="assset/logo.png" alt="ITCert Hub Logo" />
+    </a>
+    <nav class="nav">
+      <ul class="nav-list">
+        <li><a href="index.html" class="nav-link">Trang Chủ</a></li>
+        <li><a href="voucher.html" class="nav-link active">Voucher</a></li>
+        <li><a href="dump.html" class="nav-link">Dump / Tài Liệu</a></li>
+        <li><a href="blog.html" class="nav-link">Blog & Mẹo</a></li>
+        <li><a href="faq.html" class="nav-link">FAQ</a></li>
+        <li><a href="contact.html" class="nav-link">Liên Hệ</a></li>
+      </ul>
+    </nav>
+    <div class="header-actions">
+      <a href="contact.html" class="btn btn-primary btn-sm"><i class="fas fa-ticket"></i> Đặt Voucher</a>
+      <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="nav-overlay" id="nav-overlay"></div>
+<div class="nav-panel" id="nav-panel">
+  <button class="nav-panel-close" id="nav-close"><i class="fas fa-times"></i></button>
+  <a href="index.html"   class="nav-link">Trang Chủ</a>
+  <a href="voucher.html" class="nav-link">Voucher</a>
+  <a href="dump.html"    class="nav-link">Dump / Tài Liệu</a>
+  <a href="blog.html"    class="nav-link">Blog & Mẹo</a>
+  <a href="faq.html"     class="nav-link">FAQ</a>
+  <a href="contact.html" class="nav-link">Liên Hệ</a>
+  <div style="margin-top:20px;"><a href="contact.html" class="btn btn-primary btn-full">Đặt Voucher Ngay</a></div>
+</div>
+
+<!-- PAGE HERO -->
+<div class="voucher-hero">
+  <div class="container">
+    <nav class="breadcrumb">
+      <a href="index.html">Trang chủ</a>
+      <i class="fas fa-chevron-right"></i>
+      <span>Voucher Chứng Chỉ IT</span>
+    </nav>
+    <div class="voucher-hero-inner">
+      <div>
+        <div class="sec-label"><i class="fas fa-ticket"></i> Voucher Chính Hãng</div>
+        <h1>Mua <span style="color:var(--red);">Voucher Thi</span> Chứng Chỉ IT</h1>
+        <p>Voucher chính hãng từ các nhà cung cấp uy tín. Tiết kiệm đến 40%, giao trong 1–4 giờ làm việc.</p>
+      </div>
+      <div class="voucher-hero-badges">
+        <div class="hero-badge-item">
+          <i class="fas fa-certificate"></i>
+          <strong>100%</strong>
+          <span>Chính hãng</span>
+        </div>
+        <div class="hero-badge-item">
+          <i class="fas fa-bolt"></i>
+          <strong>1–4h</strong>
+          <span>Giao nhanh</span>
+        </div>
+        <div class="hero-badge-item">
+          <i class="fas fa-tags"></i>
+          <strong>–40%</strong>
+          <span>Giảm giá</span>
+        </div>
+        <div class="hero-badge-item">
+          <i class="fas fa-headset"></i>
+          <strong>7/7</strong>
+          <span>Hỗ trợ</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ CERT LOGO MARQUEE (tự cuộn) ═══ -->
+<div class="cert-marquee-wrap">
+  <div class="cert-marquee-track">
+    <!-- Track A -->
+    <div class="track-a">
+      <div class="cert-logo-item"><img src="https://titi-edu.com/wp-content/uploads/2025/05/cisco-ccna-course.webp" alt="Cisco CCNA" /></div>
+      <div class="cert-logo-item"><img src="https://titi-edu.com/wp-content/uploads/2025/04/01.SLIDER.png" alt="CompTIA A+" /></div>
+      <div class="cert-logo-item"><img src="https://titi-edu.com/wp-content/uploads/2025/04/02.SLIDER.png" alt="Network+" /></div>
+      <div class="cert-logo-item"><img src="https://titi-edu.com/wp-content/uploads/2025/04/03.SLIDER.png" alt="Security+" /></div>
+      <div class="cert-logo-item"><img src="https://titi-edu.com/wp-content/uploads/2025/04/04.SLIDER.png" alt="CySA+" /></div>
+      <div class="cert-logo-item"><img src="https://titi-edu.com/wp-content/uploads/2025/04/05.SLIDER.png" alt="CASP+" /></div>
+      <div class="cert-logo-item"><img src="https://titi-edu.com/wp-content/uploads/2025/04/08.SLIDER.png" alt="Microsoft AZ" /></div>
+      <div class="cert-logo-item"><img src="https://titi-edu.com/wp-content/uploads/2025/04/09.SLIDER.png" alt="Microsoft SC" /></div>
+      <div class="cert-logo-item"><img src="https://titi-edu.com/wp-content/uploads/2025/04/10.SLIDER.png" alt="AWS CLF" /></div>
+      <div class="cert-logo-item"><img src="https://titi-edu.com/wp-content/uploads/2025/04/12.SLIDER.png" alt="AWS SAA" /></div>
+      <div class="cert-logo-item"><img src="https://titi-edu.com/wp-content/uploads/2025/04/14.SLIDER.png" alt="Google Cloud" /></div>
+      <div class="cert-logo-item"><img src="https://titi-edu.com/wp-content/uploads/2025/04/15.SLIDER.png" alt="CEH" /></div>
+      <div class="cert-logo-item"><img src="https://titi-edu.com/wp-content/uploads/2025/04/16.SLIDER.png" alt="CCNP" /></div>
+      <div class="cert-logo-item"><img src="https://titi-edu.com/wp-content/uploads/2025/04/17.SLIDER.png" alt="CCIE" /></div>
+      <div class="cert-logo-item"><img src="https://titi-edu.com/wp-content/uploads/2025/04/18.SLIDER.png" alt="PMP" /></div>
+      <div class="cert-logo-item"><img src="https://titi-edu.com/wp-content/uploads/2025/04/19.SLIDER.png" alt="ITIL" /></div>
+      <div class="cert-logo-item"><img src="https://titi-edu.com/wp-content/uploads/2025/04/20.SLIDER.png" alt="ISC2" /></div>
+      <div class="cert-logo-item"><img src="https://titi-edu.com/wp-content/uploads/2025/04/21.SLIDER.png" alt="ISACA" /></div>
+      <div class="cert-logo-item"><img src="https://titi-edu.com/wp-content/uploads/2025/04/22.SLIDER.png" alt="Linux+" /></div>
+      <div class="cert-logo-item"><img src="https://titi-edu.com/wp-content/uploads/2025/04/23.SLIDER.png" alt="RHCSA" /></div>
+      <div class="cert-logo-item"><img src="https://titi-edu.com/wp-content/uploads/2025/04/24.SLIDER.png" alt="CCSP" /></div>
+      <div class="cert-logo-item"><img src="https://titi-edu.com/wp-content/uploads/2025/04/AWS-Certified-Solutions-Architect-Professional_badge.69d82ff1b2861e1089539ebba906c70b011b928a.png" alt="AWS SAP" /></div>
+    </div>
+    <!-- Track B: bản sao để loop liền mạch -->
+    <div class="track-b" aria-hidden="true">
+      <div class="cert-logo-item"><img src="https://titi-edu.com/wp-content/uploads/2025/05/cisco-ccna-course.webp" alt="" /></div>
+      <div class="cert-logo-item"><img src="https://titi-edu.com/wp-content/uploads/2025/04/01.SLIDER.png" alt="" /></div>
+      <div class="cert-logo-item"><img src="https://titi-edu.com/wp-content/uploads/2025/04/02.SLIDER.png" alt="" /></div>
+      <div class="cert-logo-item"><img src="https://titi-edu.com/wp-content/uploads/2025/04/03.SLIDER.png" alt="" /></div>
+      <div class="cert-logo-item"><img src="https://titi-edu.com/wp-content/uploads/2025/04/04.SLIDER.png" alt="" /></div>
+      <div class="cert-logo-item"><img src="https://titi-edu.com/wp-content/uploads/2025/04/05.SLIDER.png" alt="" /></div>
+      <div class="cert-logo-item"><img src="https://titi-edu.com/wp-content/uploads/2025/04/08.SLIDER.png" alt="" /></div>
+      <div class="cert-logo-item"><img src="https://titi-edu.com/wp-content/uploads/2025/04/09.SLIDER.png" alt="" /></div>
+      <div class="cert-logo-item"><img src="https://titi-edu.com/wp-content/uploads/2025/04/10.SLIDER.png" alt="" /></div>
+      <div class="cert-logo-item"><img src="https://titi-edu.com/wp-content/uploads/2025/04/12.SLIDER.png" alt="" /></div>
+      <div class="cert-logo-item"><img src="https://titi-edu.com/wp-content/uploads/2025/04/14.SLIDER.png" alt="" /></div>
+      <div class="cert-logo-item"><img src="https://titi-edu.com/wp-content/uploads/2025/04/15.SLIDER.png" alt="" /></div>
+      <div class="cert-logo-item"><img src="https://titi-edu.com/wp-content/uploads/2025/04/16.SLIDER.png" alt="" /></div>
+      <div class="cert-logo-item"><img src="https://titi-edu.com/wp-content/uploads/2025/04/17.SLIDER.png" alt="" /></div>
+      <div class="cert-logo-item"><img src="https://titi-edu.com/wp-content/uploads/2025/04/18.SLIDER.png" alt="" /></div>
+      <div class="cert-logo-item"><img src="https://titi-edu.com/wp-content/uploads/2025/04/19.SLIDER.png" alt="" /></div>
+      <div class="cert-logo-item"><img src="https://titi-edu.com/wp-content/uploads/2025/04/20.SLIDER.png" alt="" /></div>
+      <div class="cert-logo-item"><img src="https://titi-edu.com/wp-content/uploads/2025/04/21.SLIDER.png" alt="" /></div>
+      <div class="cert-logo-item"><img src="https://titi-edu.com/wp-content/uploads/2025/04/22.SLIDER.png" alt="" /></div>
+      <div class="cert-logo-item"><img src="https://titi-edu.com/wp-content/uploads/2025/04/23.SLIDER.png" alt="" /></div>
+      <div class="cert-logo-item"><img src="https://titi-edu.com/wp-content/uploads/2025/04/24.SLIDER.png" alt="" /></div>
+      <div class="cert-logo-item"><img src="https://titi-edu.com/wp-content/uploads/2025/04/AWS-Certified-Solutions-Architect-Professional_badge.69d82ff1b2861e1089539ebba906c70b011b928a.png" alt="" /></div>
+    </div>
+  </div>
+</div>
+
+<!-- VENDOR STICKY TABS -->
+<div class="vendor-tabs-wrap">
+  <div class="container">
+    <div class="vendor-tabs">
+      <button class="vendor-tab active" data-vendor="all">
+        <i class="fas fa-th-large"></i> Tất Cả
+        <span class="tab-count">24</span>
+      </button>
+      <button class="vendor-tab" data-vendor="cisco">
+        <i class="fas fa-network-wired" style="color:#1ca3e8;"></i> Cisco
+        <span class="tab-count">6</span>
+      </button>
+      <button class="vendor-tab" data-vendor="microsoft">
+        <i class="fab fa-microsoft" style="color:#0078d4;"></i> Microsoft
+        <span class="tab-count">6</span>
+      </button>
+      <button class="vendor-tab" data-vendor="aws">
+        <i class="fab fa-aws" style="color:#ff9900;"></i> AWS
+        <span class="tab-count">4</span>
+      </button>
+      <button class="vendor-tab" data-vendor="comptia">
+        <i class="fas fa-shield-alt" style="color:var(--red);"></i> CompTIA
+        <span class="tab-count">4</span>
+      </button>
+      <button class="vendor-tab" data-vendor="google">
+        <i class="fab fa-google" style="color:#4285F4;"></i> Google Cloud
+        <span class="tab-count">2</span>
+      </button>
+      <button class="vendor-tab" data-vendor="security">
+        <i class="fas fa-user-secret" style="color:#9c27b0;"></i> CyberSecurity
+        <span class="tab-count">4</span>
+      </button>
+      <button class="vendor-tab" data-vendor="pmi">
+        <i class="fas fa-project-diagram" style="color:#00a650;"></i> PMI
+        <span class="tab-count">2</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<main class="section">
+  <div class="container">
+
+    <!-- Level filter + search row -->
+    <div class="filter-bar">
+      <div class="level-filter-wrap" style="flex:1;margin:0;padding:0;border:none;">
+        <span class="level-filter-label"><i class="fas fa-layer-group" style="color:var(--red);"></i> Lọc Level:</span>
+        <div class="level-tabs">
+          <button class="level-tab active" data-level="all">Tất Cả</button>
+          <button class="level-tab" data-level="foundation">Foundation</button>
+          <button class="level-tab" data-level="associate">Associate</button>
+          <button class="level-tab" data-level="professional">Professional</button>
+          <button class="level-tab" data-level="expert">Expert</button>
+        </div>
+      </div>
+      <div class="search-box">
+        <input type="text" id="voucher-search" placeholder="Tìm mã thi, tên chứng chỉ..." />
+        <i class="fas fa-search"></i>
+      </div>
+    </div>
+
+    <!-- Results info -->
+    <p class="results-info" id="results-info">Đang hiển thị <strong>24</strong> voucher</p>
+
+    <!-- Voucher Grid -->
+    <div class="voucher-grid">
+
+      <!-- CISCO -->
+      <div class="voucher-card fade-in" data-vendor="cisco" data-level="associate">
+        <div class="voucher-card-stripe stripe-cisco"></div>
+        <div class="voucher-card-header">
+          <div class="voucher-vendor-info">
+            <div class="vendor-icon vi-cisco"><i class="fas fa-network-wired"></i></div>
+            <div class="vendor-label">Cisco</div>
+          </div>
+          <div class="card-badges"><span class="badge badge-hot">HOT</span><span class="level-badge level-associate">Associate</span></div>
+        </div>
+        <div class="voucher-card-body">
+          <div class="voucher-exam-code">200-301</div>
+          <div class="voucher-name">Cisco CCNA</div>
+          <div class="voucher-meta">
+            <div class="voucher-meta-item"><i class="fas fa-clock"></i> Hiệu lực 180 ngày</div>
+            <div class="voucher-meta-item"><i class="fas fa-globe"></i> Thi tại Pearson VUE</div>
+            <div class="voucher-meta-item"><i class="fas fa-bolt"></i> Giao trong 1–4 giờ</div>
+          </div>
+          <div class="voucher-price-block">
+            <span class="price-old">4.200.000₫</span>
+            <span class="price-current">2.900.000₫</span>
+            <span class="price-note">–31%</span>
+          </div>
+        </div>
+        <div class="voucher-card-footer">
+          <a href="#" class="btn btn-messenger" target="_blank" data-config="messenger"><i class="fab fa-facebook-messenger"></i> Messenger</a>
+          <a href="#" class="btn btn-zalo" data-config="zalo"><i class="fas fa-comments"></i> Zalo</a>
+        </div>
+      </div>
+
+      <div class="voucher-card fade-in" data-vendor="cisco" data-level="professional">
+        <div class="voucher-card-stripe stripe-cisco"></div>
+        <div class="voucher-card-header">
+          <div class="voucher-vendor-info">
+            <div class="vendor-icon vi-cisco"><i class="fas fa-network-wired"></i></div>
+            <div class="vendor-label">Cisco</div>
+          </div>
+          <div class="card-badges"><span class="level-badge level-professional">Professional</span></div>
+        </div>
+        <div class="voucher-card-body">
+          <div class="voucher-exam-code">350-401</div>
+          <div class="voucher-name">CCNP ENCOR</div>
+          <div class="voucher-meta">
+            <div class="voucher-meta-item"><i class="fas fa-clock"></i> Hiệu lực 180 ngày</div>
+            <div class="voucher-meta-item"><i class="fas fa-globe"></i> Thi tại Pearson VUE</div>
+            <div class="voucher-meta-item"><i class="fas fa-bolt"></i> Giao trong 1–4 giờ</div>
+          </div>
+          <div class="voucher-price-block">
+            <span class="price-old">5.500.000₫</span>
+            <span class="price-current">3.800.000₫</span>
+            <span class="price-note">–31%</span>
+          </div>
+        </div>
+        <div class="voucher-card-footer">
+          <a href="#" class="btn btn-messenger" target="_blank" data-config="messenger"><i class="fab fa-facebook-messenger"></i> Messenger</a>
+          <a href="#" class="btn btn-zalo" data-config="zalo"><i class="fas fa-comments"></i> Zalo</a>
+        </div>
+      </div>
+
+      <div class="voucher-card fade-in" data-vendor="cisco" data-level="associate">
+        <div class="voucher-card-stripe stripe-cisco"></div>
+        <div class="voucher-card-header">
+          <div class="voucher-vendor-info">
+            <div class="vendor-icon vi-cisco"><i class="fas fa-network-wired"></i></div>
+            <div class="vendor-label">Cisco</div>
+          </div>
+          <div class="card-badges"><span class="level-badge level-associate">Associate</span></div>
+        </div>
+        <div class="voucher-card-body">
+          <div class="voucher-exam-code">200-201</div>
+          <div class="voucher-name">CyberOps Associate</div>
+          <div class="voucher-meta">
+            <div class="voucher-meta-item"><i class="fas fa-clock"></i> Hiệu lực 180 ngày</div>
+            <div class="voucher-meta-item"><i class="fas fa-globe"></i> Thi tại Pearson VUE</div>
+          </div>
+          <div class="voucher-price-block">
+            <span class="price-old">4.200.000₫</span>
+            <span class="price-current">2.900.000₫</span>
+            <span class="price-note">–31%</span>
+          </div>
+        </div>
+        <div class="voucher-card-footer">
+          <a href="#" class="btn btn-messenger" target="_blank" data-config="messenger"><i class="fab fa-facebook-messenger"></i> Messenger</a>
+          <a href="#" class="btn btn-zalo" data-config="zalo"><i class="fas fa-comments"></i> Zalo</a>
+        </div>
+      </div>
+
+      <!-- MICROSOFT -->
+      <div class="voucher-card fade-in" data-vendor="microsoft" data-level="foundation">
+        <div class="voucher-card-stripe stripe-ms"></div>
+        <div class="voucher-card-header">
+          <div class="voucher-vendor-info">
+            <div class="vendor-icon vi-ms"><i class="fab fa-microsoft"></i></div>
+            <div class="vendor-label">Microsoft</div>
+          </div>
+          <div class="card-badges"><span class="badge badge-hot">HOT</span><span class="level-badge level-foundation">Foundation</span></div>
+        </div>
+        <div class="voucher-card-body">
+          <div class="voucher-exam-code">AZ-900</div>
+          <div class="voucher-name">Azure Fundamentals</div>
+          <div class="voucher-meta">
+            <div class="voucher-meta-item"><i class="fas fa-clock"></i> Hiệu lực 1 năm</div>
+            <div class="voucher-meta-item"><i class="fas fa-globe"></i> Pearson VUE / Online</div>
+            <div class="voucher-meta-item"><i class="fas fa-bolt"></i> Giao trong 1–4 giờ</div>
+          </div>
+          <div class="voucher-price-block">
+            <span class="price-old">2.800.000₫</span>
+            <span class="price-current">1.800.000₫</span>
+            <span class="price-note">–36%</span>
+          </div>
+        </div>
+        <div class="voucher-card-footer">
+          <a href="#" class="btn btn-messenger" target="_blank" data-config="messenger"><i class="fab fa-facebook-messenger"></i> Messenger</a>
+          <a href="#" class="btn btn-zalo" data-config="zalo"><i class="fas fa-comments"></i> Zalo</a>
+        </div>
+      </div>
+
+      <div class="voucher-card fade-in" data-vendor="microsoft" data-level="associate">
+        <div class="voucher-card-stripe stripe-ms"></div>
+        <div class="voucher-card-header">
+          <div class="voucher-vendor-info">
+            <div class="vendor-icon vi-ms"><i class="fab fa-microsoft"></i></div>
+            <div class="vendor-label">Microsoft</div>
+          </div>
+          <div class="card-badges"><span class="level-badge level-associate">Associate</span></div>
+        </div>
+        <div class="voucher-card-body">
+          <div class="voucher-exam-code">AZ-104</div>
+          <div class="voucher-name">Azure Administrator</div>
+          <div class="voucher-meta">
+            <div class="voucher-meta-item"><i class="fas fa-clock"></i> Hiệu lực 1 năm</div>
+            <div class="voucher-meta-item"><i class="fas fa-globe"></i> Pearson VUE</div>
+          </div>
+          <div class="voucher-price-block">
+            <span class="price-old">4.000.000₫</span>
+            <span class="price-current">2.700.000₫</span>
+            <span class="price-note">–33%</span>
+          </div>
+        </div>
+        <div class="voucher-card-footer">
+          <a href="#" class="btn btn-messenger" target="_blank" data-config="messenger"><i class="fab fa-facebook-messenger"></i> Messenger</a>
+          <a href="#" class="btn btn-zalo" data-config="zalo"><i class="fas fa-comments"></i> Zalo</a>
+        </div>
+      </div>
+
+      <div class="voucher-card fade-in" data-vendor="microsoft" data-level="foundation">
+        <div class="voucher-card-stripe stripe-ms"></div>
+        <div class="voucher-card-header">
+          <div class="voucher-vendor-info">
+            <div class="vendor-icon vi-ms"><i class="fab fa-microsoft"></i></div>
+            <div class="vendor-label">Microsoft</div>
+          </div>
+          <div class="card-badges"><span class="level-badge level-foundation">Foundation</span></div>
+        </div>
+        <div class="voucher-card-body">
+          <div class="voucher-exam-code">SC-900</div>
+          <div class="voucher-name">Security Fundamentals</div>
+          <div class="voucher-meta">
+            <div class="voucher-meta-item"><i class="fas fa-clock"></i> Hiệu lực 1 năm</div>
+            <div class="voucher-meta-item"><i class="fas fa-globe"></i> Online / Pearson VUE</div>
+          </div>
+          <div class="voucher-price-block">
+            <span class="price-old">2.800.000₫</span>
+            <span class="price-current">1.900.000₫</span>
+            <span class="price-note">–32%</span>
+          </div>
+        </div>
+        <div class="voucher-card-footer">
+          <a href="#" class="btn btn-messenger" target="_blank" data-config="messenger"><i class="fab fa-facebook-messenger"></i> Messenger</a>
+          <a href="#" class="btn btn-zalo" data-config="zalo"><i class="fas fa-comments"></i> Zalo</a>
+        </div>
+      </div>
+
+      <div class="voucher-card fade-in" data-vendor="microsoft" data-level="expert">
+        <div class="voucher-card-stripe stripe-ms"></div>
+        <div class="voucher-card-header">
+          <div class="voucher-vendor-info">
+            <div class="vendor-icon vi-ms"><i class="fab fa-microsoft"></i></div>
+            <div class="vendor-label">Microsoft</div>
+          </div>
+          <div class="card-badges"><span class="level-badge level-expert">Expert</span></div>
+        </div>
+        <div class="voucher-card-body">
+          <div class="voucher-exam-code">AZ-305</div>
+          <div class="voucher-name">Azure Solutions Architect</div>
+          <div class="voucher-meta">
+            <div class="voucher-meta-item"><i class="fas fa-clock"></i> Hiệu lực 1 năm</div>
+            <div class="voucher-meta-item"><i class="fas fa-globe"></i> Pearson VUE</div>
+          </div>
+          <div class="voucher-price-block">
+            <span class="price-old">5.000.000₫</span>
+            <span class="price-current">3.400.000₫</span>
+            <span class="price-note">–32%</span>
+          </div>
+        </div>
+        <div class="voucher-card-footer">
+          <a href="#" class="btn btn-messenger" target="_blank" data-config="messenger"><i class="fab fa-facebook-messenger"></i> Messenger</a>
+          <a href="#" class="btn btn-zalo" data-config="zalo"><i class="fas fa-comments"></i> Zalo</a>
+        </div>
+      </div>
+
+      <!-- AWS -->
+      <div class="voucher-card fade-in" data-vendor="aws" data-level="foundation">
+        <div class="voucher-card-stripe stripe-aws"></div>
+        <div class="voucher-card-header">
+          <div class="voucher-vendor-info">
+            <div class="vendor-icon vi-aws"><i class="fab fa-aws"></i></div>
+            <div class="vendor-label">AWS</div>
+          </div>
+          <div class="card-badges"><span class="level-badge level-foundation">Foundation</span></div>
+        </div>
+        <div class="voucher-card-body">
+          <div class="voucher-exam-code">CLF-C02</div>
+          <div class="voucher-name">Cloud Practitioner</div>
+          <div class="voucher-meta">
+            <div class="voucher-meta-item"><i class="fas fa-clock"></i> Hiệu lực 2 năm</div>
+            <div class="voucher-meta-item"><i class="fas fa-globe"></i> Pearson VUE / PSI</div>
+          </div>
+          <div class="voucher-price-block">
+            <span class="price-old">3.500.000₫</span>
+            <span class="price-current">2.200.000₫</span>
+            <span class="price-note">–37%</span>
+          </div>
+        </div>
+        <div class="voucher-card-footer">
+          <a href="#" class="btn btn-messenger" target="_blank" data-config="messenger"><i class="fab fa-facebook-messenger"></i> Messenger</a>
+          <a href="#" class="btn btn-zalo" data-config="zalo"><i class="fas fa-comments"></i> Zalo</a>
+        </div>
+      </div>
+
+      <div class="voucher-card fade-in" data-vendor="aws" data-level="associate">
+        <div class="voucher-card-stripe stripe-aws"></div>
+        <div class="voucher-card-header">
+          <div class="voucher-vendor-info">
+            <div class="vendor-icon vi-aws"><i class="fab fa-aws"></i></div>
+            <div class="vendor-label">AWS</div>
+          </div>
+          <div class="card-badges"><span class="badge badge-hot">HOT</span><span class="level-badge level-associate">Associate</span></div>
+        </div>
+        <div class="voucher-card-body">
+          <div class="voucher-exam-code">SAA-C03</div>
+          <div class="voucher-name">Solutions Architect Associate</div>
+          <div class="voucher-meta">
+            <div class="voucher-meta-item"><i class="fas fa-clock"></i> Hiệu lực 2 năm</div>
+            <div class="voucher-meta-item"><i class="fas fa-globe"></i> Pearson VUE / PSI</div>
+          </div>
+          <div class="voucher-price-block">
+            <span class="price-old">5.200.000₫</span>
+            <span class="price-current">3.200.000₫</span>
+            <span class="price-note">–38%</span>
+          </div>
+        </div>
+        <div class="voucher-card-footer">
+          <a href="#" class="btn btn-messenger" target="_blank" data-config="messenger"><i class="fab fa-facebook-messenger"></i> Messenger</a>
+          <a href="#" class="btn btn-zalo" data-config="zalo"><i class="fas fa-comments"></i> Zalo</a>
+        </div>
+      </div>
+
+      <!-- CompTIA -->
+      <div class="voucher-card fade-in" data-vendor="comptia" data-level="associate">
+        <div class="voucher-card-stripe stripe-comptia"></div>
+        <div class="voucher-card-header">
+          <div class="voucher-vendor-info">
+            <div class="vendor-icon vi-comptia"><i class="fas fa-shield-alt"></i></div>
+            <div class="vendor-label">CompTIA</div>
+          </div>
+          <div class="card-badges"><span class="level-badge level-associate">Associate</span></div>
+        </div>
+        <div class="voucher-card-body">
+          <div class="voucher-exam-code">SY0-701</div>
+          <div class="voucher-name">Security+</div>
+          <div class="voucher-meta">
+            <div class="voucher-meta-item"><i class="fas fa-clock"></i> Hiệu lực 1 năm</div>
+            <div class="voucher-meta-item"><i class="fas fa-globe"></i> Pearson VUE / Online</div>
+          </div>
+          <div class="voucher-price-block">
+            <span class="price-old">4.000.000₫</span>
+            <span class="price-current">2.500.000₫</span>
+            <span class="price-note">–38%</span>
+          </div>
+        </div>
+        <div class="voucher-card-footer">
+          <a href="#" class="btn btn-messenger" target="_blank" data-config="messenger"><i class="fab fa-facebook-messenger"></i> Messenger</a>
+          <a href="#" class="btn btn-zalo" data-config="zalo"><i class="fas fa-comments"></i> Zalo</a>
+        </div>
+      </div>
+
+      <div class="voucher-card fade-in" data-vendor="comptia" data-level="associate">
+        <div class="voucher-card-stripe stripe-comptia"></div>
+        <div class="voucher-card-header">
+          <div class="voucher-vendor-info">
+            <div class="vendor-icon vi-comptia"><i class="fas fa-shield-alt"></i></div>
+            <div class="vendor-label">CompTIA</div>
+          </div>
+          <div class="card-badges"><span class="level-badge level-associate">Associate</span></div>
+        </div>
+        <div class="voucher-card-body">
+          <div class="voucher-exam-code">N10-009</div>
+          <div class="voucher-name">Network+</div>
+          <div class="voucher-meta">
+            <div class="voucher-meta-item"><i class="fas fa-clock"></i> Hiệu lực 1 năm</div>
+            <div class="voucher-meta-item"><i class="fas fa-globe"></i> Pearson VUE / Online</div>
+          </div>
+          <div class="voucher-price-block">
+            <span class="price-old">3.800.000₫</span>
+            <span class="price-current">2.400.000₫</span>
+            <span class="price-note">–37%</span>
+          </div>
+        </div>
+        <div class="voucher-card-footer">
+          <a href="#" class="btn btn-messenger" target="_blank" data-config="messenger"><i class="fab fa-facebook-messenger"></i> Messenger</a>
+          <a href="#" class="btn btn-zalo" data-config="zalo"><i class="fas fa-comments"></i> Zalo</a>
+        </div>
+      </div>
+
+      <!-- Google Cloud -->
+      <div class="voucher-card fade-in" data-vendor="google" data-level="foundation">
+        <div class="voucher-card-stripe stripe-google"></div>
+        <div class="voucher-card-header">
+          <div class="voucher-vendor-info">
+            <div class="vendor-icon vi-google"><i class="fab fa-google"></i></div>
+            <div class="vendor-label">Google Cloud</div>
+          </div>
+          <div class="card-badges"><span class="badge badge-new">NEW</span><span class="level-badge level-foundation">Foundation</span></div>
+        </div>
+        <div class="voucher-card-body">
+          <div class="voucher-exam-code">GCP-CDL</div>
+          <div class="voucher-name">Cloud Digital Leader</div>
+          <div class="voucher-meta">
+            <div class="voucher-meta-item"><i class="fas fa-clock"></i> Hiệu lực 1 năm</div>
+            <div class="voucher-meta-item"><i class="fas fa-globe"></i> Kryterion / Online</div>
+          </div>
+          <div class="voucher-price-block">
+            <span class="price-old">3.200.000₫</span>
+            <span class="price-current">2.100.000₫</span>
+            <span class="price-note">–34%</span>
+          </div>
+        </div>
+        <div class="voucher-card-footer">
+          <a href="#" class="btn btn-messenger" target="_blank" data-config="messenger"><i class="fab fa-facebook-messenger"></i> Messenger</a>
+          <a href="#" class="btn btn-zalo" data-config="zalo"><i class="fas fa-comments"></i> Zalo</a>
+        </div>
+      </div>
+
+      <!-- CyberSecurity -->
+      <div class="voucher-card fade-in" data-vendor="security" data-level="professional">
+        <div class="voucher-card-stripe stripe-ec"></div>
+        <div class="voucher-card-header">
+          <div class="voucher-vendor-info">
+            <div class="vendor-icon vi-ec"><i class="fas fa-user-secret"></i></div>
+            <div class="vendor-label">EC-Council</div>
+          </div>
+          <div class="card-badges"><span class="level-badge level-professional">Professional</span></div>
+        </div>
+        <div class="voucher-card-body">
+          <div class="voucher-exam-code">CEH v12</div>
+          <div class="voucher-name">Certified Ethical Hacker</div>
+          <div class="voucher-meta">
+            <div class="voucher-meta-item"><i class="fas fa-clock"></i> Hiệu lực 1 năm</div>
+            <div class="voucher-meta-item"><i class="fas fa-globe"></i> ECC Exam Center</div>
+          </div>
+          <div class="voucher-price-block">
+            <span class="price-old">8.000.000₫</span>
+            <span class="price-current">5.500.000₫</span>
+            <span class="price-note">–31%</span>
+          </div>
+        </div>
+        <div class="voucher-card-footer">
+          <a href="#" class="btn btn-messenger" target="_blank" data-config="messenger"><i class="fab fa-facebook-messenger"></i> Messenger</a>
+          <a href="#" class="btn btn-zalo" data-config="zalo"><i class="fas fa-comments"></i> Zalo</a>
+        </div>
+      </div>
+
+      <!-- PMI -->
+      <div class="voucher-card fade-in" data-vendor="pmi" data-level="professional">
+        <div class="voucher-card-stripe stripe-pmi"></div>
+        <div class="voucher-card-header">
+          <div class="voucher-vendor-info">
+            <div class="vendor-icon vi-pmi"><i class="fas fa-project-diagram"></i></div>
+            <div class="vendor-label">PMI</div>
+          </div>
+          <div class="card-badges"><span class="level-badge level-professional">Professional</span></div>
+        </div>
+        <div class="voucher-card-body">
+          <div class="voucher-exam-code">PMP</div>
+          <div class="voucher-name">Project Management Professional</div>
+          <div class="voucher-meta">
+            <div class="voucher-meta-item"><i class="fas fa-clock"></i> Hiệu lực 1 năm</div>
+            <div class="voucher-meta-item"><i class="fas fa-globe"></i> Pearson VUE</div>
+          </div>
+          <div class="voucher-price-block">
+            <span class="price-old">10.000.000₫</span>
+            <span class="price-current">7.000.000₫</span>
+            <span class="price-note">–30%</span>
+          </div>
+        </div>
+        <div class="voucher-card-footer">
+          <a href="#" class="btn btn-messenger" target="_blank" data-config="messenger"><i class="fab fa-facebook-messenger"></i> Messenger</a>
+          <a href="#" class="btn btn-zalo" data-config="zalo"><i class="fas fa-comments"></i> Zalo</a>
+        </div>
+      </div>
+
+    </div><!-- /.voucher-grid -->
+
+  </div>
+</main>
+
+<!-- WHY CHOOSE -->
+<section class="section" style="background:var(--bg-section);border-top:1px solid var(--border);">
+  <div class="container">
+    <div class="sec-header center">
+      <div class="sec-label"><i class="fas fa-star"></i> Tại Sao Chọn Chúng Tôi</div>
+      <h2 class="sec-title">Cam Kết Của <span>ITCert Hub</span></h2>
+    </div>
+    <div class="why-grid-v">
+      <div class="why-item fade-in">
+        <div class="why-item-icon"><i class="fas fa-certificate"></i></div>
+        <h4>Voucher 100% Chính Hãng</h4>
+        <p>Mua trực tiếp từ nhà phân phối ủy quyền. Kích hoạt được ngay, không rủi ro.</p>
+      </div>
+      <div class="why-item fade-in">
+        <div class="why-item-icon"><i class="fas fa-shield-check"></i></div>
+        <h4>Hoàn Tiền Nếu Lỗi</h4>
+        <p>Cam kết hoàn 100% nếu voucher không sử dụng được do lỗi của chúng tôi.</p>
+      </div>
+      <div class="why-item fade-in">
+        <div class="why-item-icon"><i class="fas fa-user-tie"></i></div>
+        <h4>Tư Vấn Lộ Trình Miễn Phí</h4>
+        <p>Đội ngũ chuyên gia tư vấn chứng chỉ phù hợp với mục tiêu và ngân sách của bạn.</p>
+      </div>
+      <div class="why-item fade-in">
+        <div class="why-item-icon"><i class="fas fa-calendar-check"></i></div>
+        <h4>Hỗ Trợ Đặt Lịch Thi</h4>
+        <p>Hỗ trợ đăng ký tài khoản Pearson VUE, chọn ngày thi, và xử lý sự cố kỹ thuật.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT STRIP -->
+<div class="contact-strip">
+  <div class="container contact-strip-inner">
+    <p>Chưa biết nên mua voucher nào? <span>Tư vấn miễn phí – trả lời trong 30 phút!</span></p>
+    <div class="contact-strip-actions">
+      <a href="#" class="btn-strip-messenger" target="_blank" data-config="messenger"><i class="fab fa-facebook-messenger"></i> Messenger Ngay</a>
+      <a href="contact.html" class="btn-strip-outline"><i class="fas fa-envelope"></i> Gửi Email</a>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo"><img src="assset/logo.png" alt="ITCert Hub" /></div>
+        <p>Chuyên cung cấp voucher thi chứng chỉ IT chính hãng và dump luyện thi uy tín hàng đầu Việt Nam.</p>
+        <div class="footer-socials">
+          <a href="#" class="footer-social" title="Facebook" data-config="facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="footer-social" title="Messenger" data-config="messenger"><i class="fab fa-facebook-messenger"></i></a>
+          <a href="#" class="footer-social" title="Telegram Group" data-config="telegram"><i class="fab fa-telegram-plane"></i></a>
+          <a href="#" class="footer-social" title="Zalo" data-config="zalo"><span style="font-size:12px;font-weight:800;">Z</span></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Voucher Theo Hãng</h4>
+        <ul>
+          <li><a href="#cisco" onclick="document.querySelector('[data-vendor=cisco]')?.click()">Cisco</a></li>
+          <li><a href="#microsoft" onclick="document.querySelector('[data-vendor=microsoft]')?.click()">Microsoft</a></li>
+          <li><a href="#aws" onclick="document.querySelector('[data-vendor=aws]')?.click()">AWS</a></li>
+          <li><a href="#comptia" onclick="document.querySelector('[data-vendor=comptia]')?.click()">CompTIA</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Liên Kết</h4>
+        <ul>
+          <li><a href="dump.html">Dump Luyện Thi</a></li>
+          <li><a href="blog.html">Blog & Mẹo</a></li>
+          <li><a href="faq.html">Câu Hỏi Thường Gặp</a></li>
+          <li><a href="contact.html">Liên Hệ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Liên Hệ Nhanh</h4>
+        <ul>
+          <li><a href="#" data-config="phone"><i class="fas fa-phone"></i> <span data-config="phoneNumber">0912 345 678</span></a></li>
+          <li><a href="#" data-config="emailLink"><i class="fas fa-envelope"></i> <span data-config="email">info@itcerthub.vn</span></a></li>
+          <li><a href="#" data-config="messenger"><i class="fab fa-facebook-messenger"></i> Messenger</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 ITCert Hub. Tất cả quyền được bảo lưu.</p>
+      <p>Voucher Chính Hãng · Giao Nhanh · Hỗ Trợ 7/7</p>
+    </div>
+  </div>
+</footer>
+
+<button class="back-to-top" title="Về đầu trang"><i class="fas fa-arrow-up"></i></button>
+
+<!-- JS: core → voucher (chỉ trang này) -->
+<script src="js/config.js"></script>
+<script src="js/core.js"></script>
+<script src="js/voucher.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,135 @@
+/* =============================================
+   base.css – Variables, Reset, Typography
+   Dùng ở: TẤT CẢ các trang (load đầu tiên)
+   ============================================= */
+
+/* ---------- CSS Variables ---------- */
+:root {
+  /* Brand Colors */
+  --red:          #e8000d;
+  --red-dark:     #b50009;
+  --red-light:    #ff3340;
+  --red-bg:       rgba(232, 0, 13, 0.05);
+  --red-border:   rgba(232, 0, 13, 0.15);
+
+  /* Light Backgrounds */
+  --bg-body:      #f8fafc;
+  --bg-section:   #ffffff;
+  --bg-card:      #ffffff;
+  --bg-input:     #ffffff;
+  --bg-hover:     #f1f5f9;
+
+  /* Dark Text for Light Mode */
+  --text-white:   #0f172a;
+  --text-main:    #334155;
+  --text-muted:   #64748b;
+  --text-dim:     #94a3b8;
+
+  /* Light Mode Borders */
+  --border:       #e2e8f0;
+  --border-light: #f1f5f9;
+
+  /* Spacing */
+  --gap-xs:  8px;
+  --gap-sm:  16px;
+  --gap-md:  24px;
+  --gap-lg:  40px;
+  --gap-xl:  64px;
+
+  /* Radius */
+  --r-sm:  4px;
+  --r-md:  8px;
+  --r-lg:  12px;
+  --r-xl:  20px;
+
+  /* Font */
+  --font: 'Arial', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  /* Transitions */
+  --ease: all 0.22s ease;
+}
+
+/* ---------- Reset ---------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 15px;
+}
+
+body {
+  font-family: var(--font);
+  background: var(--bg-body);
+  color: var(--text-main);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: var(--ease);
+}
+
+ul, ol { list-style: none; }
+img { max-width: 100%; height: auto; display: block; }
+button { cursor: pointer; border: none; background: none; font-family: var(--font); }
+input, select, textarea { font-family: var(--font); }
+
+/* ---------- Scrollbar ---------- */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--bg-body); }
+::-webkit-scrollbar-thumb { background: var(--red); border-radius: 3px; }
+
+/* ---------- Container ---------- */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ---------- Typography ---------- */
+h1, h2, h3, h4, h5 {
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--text-white);
+}
+
+h1 { font-size: clamp(26px, 4vw, 40px); }
+h2 { font-size: clamp(20px, 3vw, 30px); }
+h3 { font-size: clamp(16px, 2.5vw, 20px); }
+h4 { font-size: 16px; }
+
+p { color: var(--text-main); }
+
+strong { color: var(--text-white); font-weight: 600; }
+
+/* ---------- Section Spacing ---------- */
+.section { padding: 60px 0; }
+
+/* ---------- Utility ---------- */
+.hidden  { display: none !important; }
+.text-red { color: var(--red); }
+.text-muted { color: var(--text-muted); }
+.text-white { color: var(--text-white); }
+.text-center { text-align: center; }
+
+.mt-sm { margin-top: var(--gap-sm); }
+.mt-md { margin-top: var(--gap-md); }
+.mb-md { margin-bottom: var(--gap-md); }
+
+/* Scroll animation */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}

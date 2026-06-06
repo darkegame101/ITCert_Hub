@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Câu Hỏi Thường Gặp – FAQ | ITCert Hub</title>
+  <meta name="description" content="Giải đáp thắc mắc về cách mua voucher chứng chỉ IT, độ sát đề thi của dump, hình thức thanh toán, chính sách hoàn tiền và hỗ trợ đặt lịch thi Pearson VUE." />
+  <link rel="icon" href="assset/logo.png" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/faq.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+<!-- ═══ SUPPORT WIDGET (CHAT POPUP) ═══ -->
+<div class="support-widget" id="support-widget">
+  <div class="support-popup" id="support-popup">
+    <div class="support-popup-header">
+      <div class="support-avatar">IT</div>
+      <div class="support-header-info">
+        <h4>Hỗ Trợ Trực Tuyến</h4>
+        <span>Phản hồi trong 5 phút</span>
+      </div>
+      <button class="support-close" id="support-close"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="support-popup-body">
+      <p class="support-greeting">Xin chào! Chúng tôi có thể giúp gì cho bạn? Hãy chọn một kênh liên hệ tiện lợi nhất phía dưới để trò chuyện cùng admin:</p>
+      
+      <div class="support-channels">
+        <a href="#" class="support-channel-btn sc-zalo" target="_blank" data-config="zalo">
+          <span class="sc-icon">Z</span>
+          <div class="sc-text">
+            <strong>Chat qua Zalo</strong>
+            <span>Hỗ trợ nhanh nhất 24/7</span>
+          </div>
+        </a>
+        <a href="#" class="support-channel-btn sc-messenger" target="_blank" data-config="messenger">
+          <i class="fab fa-facebook-messenger"></i>
+          <div class="sc-text">
+            <strong>Nhắn tin Messenger</strong>
+            <span>Hỗ trợ qua Facebook cá nhân</span>
+          </div>
+        </a>
+        <a href="#" class="support-channel-btn sc-fanpage" target="_blank" data-config="facebook">
+          <i class="fab fa-facebook"></i>
+          <div class="sc-text">
+            <strong>Truy cập Fanpage</strong>
+            <span>Cập nhật tin tức & ưu đãi</span>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="support-popup-footer">
+      <a href="#" data-config="phone"><i class="fas fa-phone-alt"></i> Hotline: <span data-config="phoneNumber">0912 345 678</span></a>
+    </div>
+  </div>
+  
+  <button class="support-trigger" id="support-trigger" aria-label="Hỗ trợ trực tuyến">
+    <i class="fas fa-comments chat-open-icon"></i>
+    <i class="fas fa-times chat-close-icon" style="display:none;"></i>
+    <span class="support-pulse"></span>
+  </button>
+</div>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <div class="container topbar-inner">
+    <div class="topbar-left">
+      <span><i class="fas fa-envelope"></i> <span data-config="email">info@itcerthub.vn</span></span>
+      <span><i class="fas fa-phone"></i> <span data-config="phoneNumber">0912 345 678</span></span>
+      <span><i class="fas fa-clock"></i> T2–T7: 8:00 – 21:00</span>
+    </div>
+    <div class="topbar-right">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-tiktok"></i></a>
+    </div>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header class="header" id="header">
+  <div class="container header-inner">
+    <a href="index.html" class="logo">
+      <img src="assset/logo.png" alt="ITCert Hub Logo" />
+    </a>
+    <nav class="nav">
+      <ul class="nav-list">
+        <li><a href="index.html" class="nav-link">Trang Chủ</a></li>
+        <li><a href="voucher.html" class="nav-link">Voucher</a></li>
+        <li><a href="dump.html" class="nav-link">Dump / Tài Liệu</a></li>
+        <li><a href="blog.html" class="nav-link">Blog & Mẹo</a></li>
+        <li><a href="faq.html" class="nav-link active">FAQ</a></li>
+        <li><a href="contact.html" class="nav-link">Liên Hệ</a></li>
+      </ul>
+    </nav>
+    <div class="header-actions">
+      <a href="contact.html" class="btn btn-primary btn-sm"><i class="fas fa-ticket"></i> Đặt Voucher</a>
+      <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="nav-overlay" id="nav-overlay"></div>
+<div class="nav-panel" id="nav-panel">
+  <button class="nav-panel-close" id="nav-close"><i class="fas fa-times"></i></button>
+  <a href="index.html"   class="nav-link">Trang Chủ</a>
+  <a href="voucher.html" class="nav-link">Voucher</a>
+  <a href="dump.html"    class="nav-link">Dump / Tài Liệu</a>
+  <a href="blog.html"    class="nav-link">Blog & Mẹo</a>
+  <a href="faq.html"     class="nav-link">FAQ</a>
+  <a href="contact.html" class="nav-link">Liên Hệ</a>
+  <div style="margin-top:20px;"><a href="contact.html" class="btn btn-primary btn-full">Đặt Voucher Ngay</a></div>
+</div>
+
+<!-- PAGE HERO -->
+<div class="faq-hero">
+  <div class="container">
+    <nav class="breadcrumb">
+      <a href="index.html">Trang chủ</a>
+      <i class="fas fa-chevron-right"></i>
+      <span>Câu Hỏi Thường Gặp</span>
+    </nav>
+    <h1>Câu Hỏi <span style="color:var(--red);">Thường Gặp</span></h1>
+    <p>Tổng hợp và giải đáp toàn bộ thắc mắc của bạn về sản phẩm, dịch vụ và thi cử chứng chỉ IT.</p>
+  </div>
+</div>
+
+<div class="container">
+  <div class="faq-page-layout">
+    <!-- Category Navigation Sidebar -->
+    <aside class="faq-cat-nav">
+      <div class="faq-cat-nav-title">Chủ đề câu hỏi</div>
+      <div class="faq-cat-link active" data-group="mua-hang">
+        <i class="fas fa-shopping-cart"></i> Mua hàng & Thanh toán
+      </div>
+      <div class="faq-cat-link" data-group="voucher">
+        <i class="fas fa-ticket"></i> Voucher Chứng Chỉ
+      </div>
+      <div class="faq-cat-link" data-group="dump">
+        <i class="fas fa-book-open"></i> Dump & Tài Liệu
+      </div>
+      <div class="faq-cat-link" data-group="thi-cu">
+        <i class="fas fa-user-shield"></i> Lịch thi & Hỗ trợ
+      </div>
+    </aside>
+
+    <!-- FAQ main content -->
+    <main class="faq-content">
+
+      <!-- Mua hàng & Thanh toán -->
+      <section class="faq-group" id="mua-hang">
+        <h3 class="faq-group-title"><i class="fas fa-shopping-cart"></i> Mua hàng & Thanh toán</h3>
+        <div class="faq-list">
+          
+          <div class="faq-item open">
+            <div class="faq-question">
+              <span class="faq-q-text">Làm thế nào để đặt mua Voucher hoặc Dump?</span>
+              <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+            </div>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                <p>Bạn có thể đặt hàng qua 3 cách đơn giản sau:</p>
+                <ul>
+                  <li><strong>Cách 1:</strong> Điền thông tin vào form tại trang <a href="contact.html">Liên Hệ & Đặt Hàng</a>. Đội ngũ admin sẽ liên hệ lại qua Zalo/Email trong vòng 30 phút.</li>
+                  <li><strong>Cách 2:</strong> Nhấn trực tiếp vào nút mua trên voucher/dump để kết nối ngay với bộ phận chăm sóc khách hàng qua <strong>WhatsApp</strong> hoặc <strong>Zalo</strong>.</li>
+                  <li><strong>Cách 3:</strong> Gọi điện trực tiếp vào hotline <strong>0912 345 678</strong> để được xử lý nhanh nhất.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              <span class="faq-q-text">ITCert Hub hỗ trợ những phương thức thanh toán nào?</span>
+              <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+            </div>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                <p>Chúng tôi chấp nhận nhiều hình thức thanh toán linh hoạt và an toàn:</p>
+                <ul>
+                  <li>Chuyển khoản ngân hàng 24/7 (Vietcombank, Techcombank, MB Bank, v.v.).</li>
+                  <li>Ví điện tử: MoMo, ZaloPay.</li>
+                  <li>Cổng thanh toán QR Code qua VNPay.</li>
+                  <li>Thanh toán quốc tế qua PayPal (dành cho học viên ở nước ngoài).</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              <span class="faq-q-text">Chính sách bảo hành và hoàn tiền như thế nào?</span>
+              <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+            </div>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                <p>Chúng tôi cam kết bảo vệ quyền lợi của khách hàng ở mức cao nhất:</p>
+                <ul>
+                  <li><strong>Đối với Voucher:</strong> Bảo hành 100% trong suốt thời gian hiệu lực. Hoàn tiền hoặc đổi voucher mới ngay lập tức nếu code bị lỗi từ phía nhà cung cấp.</li>
+                  <li><strong>Đối với Dump:</strong> Cam kết hoàn tiền 100% chi phí mua dump hoặc đổi bộ dump khác miễn phí nếu đề thi thay đổi đột ngột (trong vòng 7 ngày kể từ khi mua) và tỷ lệ trùng lặp thực tế dưới 70%.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Voucher Chứng Chỉ -->
+      <section class="faq-group" id="voucher">
+        <h3 class="faq-group-title"><i class="fas fa-ticket"></i> Voucher Chứng Chỉ</h3>
+        <div class="faq-list">
+          
+          <div class="faq-item">
+            <div class="faq-question">
+              <span class="faq-q-text">Voucher của ITCert Hub là chính hãng không? Tại sao giá rẻ hơn hãng?</span>
+              <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+            </div>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                <p><strong>100% voucher do ITCert Hub cung cấp là chính hãng</strong>, được nhập trực tiếp từ các đối tác ủy quyền của Pearson VUE và các hãng công nghệ lớn (Cisco, Microsoft, AWS, CompTIA, v.v.).</p>
+                <p>Lý do giá của chúng tôi rẻ hơn so với mua trực tiếp từ trang chủ của hãng là vì:</p>
+                <ul>
+                  <li>Chúng tôi mua theo số lượng lớn (Bulk buying) để được chiết khấu cao.</li>
+                  <li>Sử dụng các chương trình ưu đãi dành riêng cho khu vực đang phát triển hoặc các tổ chức giáo dục đối tác.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              <span class="faq-q-text">Thời gian giao voucher là bao lâu và hạn sử dụng thế nào?</span>
+              <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+            </div>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                <p><strong>Thời gian bàn giao:</strong> Thông thường từ <strong>1 đến 4 giờ làm việc</strong> sau khi thanh toán thành công. Voucher sẽ được gửi trực tiếp qua Zalo hoặc Email đăng ký kèm hướng dẫn chi tiết cách book lịch thi.</p>
+                <p><strong>Thời hạn sử dụng:</strong> Hầu hết voucher thi Cisco, AWS, CompTIA có hạn dùng từ <strong>3 đến 6 tháng (180 ngày)</strong>. Voucher Microsoft thường có hạn dài hơn (lên đến 1 năm). Chúng tôi luôn báo trước chính xác hạn dùng trước khi bạn chuyển khoản.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              <span class="faq-q-text">Tôi có thể tự đăng ký thi hay ITCert Hub đăng ký giúp?</span>
+              <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+            </div>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                <p>Bạn có thể tự đăng ký thi bằng cách nhập mã voucher ở bước thanh toán cuối cùng trên hệ thống Pearson VUE.</p>
+                <p>Nếu bạn chưa quen hoặc sợ sai sót, <strong>ITCert Hub hỗ trợ book lịch thi hộ hoàn toàn miễn phí</strong>. Bạn chỉ cần cung cấp thời gian thi mong muốn và thông tin tài khoản Pearson VUE của bạn.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Dump & Tài Liệu -->
+      <section class="faq-group" id="dump">
+        <h3 class="faq-group-title"><i class="fas fa-book-open"></i> Dump & Tài Liệu</h3>
+        <div class="faq-list">
+          
+          <div class="faq-item">
+            <div class="faq-question">
+              <span class="faq-q-text">Dump thi chứng chỉ là gì? Có sát đề thi thật không?</span>
+              <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+            </div>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                <p><strong>Dump</strong> là bộ đề thi trắc nghiệm được biên soạn lại từ câu hỏi thi thực tế của các học viên đã thi trước đó. Độ sát đề thi thật trung bình từ <strong>75% đến 95%</strong> tùy thuộc vào thời điểm thi và tần suất đổi đề của các hãng.</p>
+                <p>Chúng tôi cập nhật dump liên tục hàng tuần để đảm bảo tỷ lệ pass cao nhất cho học viên.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              <span class="faq-q-text">Sau khi mua dump, tôi có được nhận cập nhật mới không?</span>
+              <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+            </div>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                <p><strong>Có!</strong> Tất cả khách hàng mua dump tại ITCert Hub đều được <strong>miễn phí cập nhật phiên bản mới trong vòng 30 đến 60 ngày</strong> kể từ thời điểm mua hàng.</p>
+                <p>Mỗi khi hãng cập nhật mã đề, chúng tôi sẽ tự động thông báo hoặc bạn chủ động liên hệ admin để nhận file PDF/VCE cập nhật mới nhất.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              <span class="faq-q-text">Nên kết hợp học dump với tài liệu chính thống như thế nào?</span>
+              <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+            </div>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                <p>Sử dụng dump có trách nhiệm và khoa học:</p>
+                <ul>
+                  <li><strong>Bước 1:</strong> Học và thực hành lab trên tài liệu chính thống (Official Guide, Udemy, Lab thực hành) để hiểu rõ kiến thức cốt lõi.</li>
+                  <li><strong>Bước 2:</strong> Trước ngày thi khoảng 2–3 tuần, mở bộ dump để ôn luyện, làm quen với cách đặt câu hỏi và quản lý thời gian thi.</li>
+                  <li><strong>Bước 3:</strong> Giải thích các câu hỏi sai để khắc sâu kiến thức, thay vì chỉ cố gắng học thuộc lòng.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Lịch thi & Hỗ trợ -->
+      <section class="faq-group" id="thi-cu">
+        <h3 class="faq-group-title"><i class="fas fa-user-shield"></i> Lịch thi & Hỗ trợ</h3>
+        <div class="faq-list">
+          
+          <div class="faq-item">
+            <div class="faq-question">
+              <span class="faq-q-text">Tôi muốn đổi ngày thi hoặc hủy thi thì phải làm sao?</span>
+              <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+            </div>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                <p>Theo quy định chung của Pearson VUE và đa số hãng (Cisco, AWS, CompTIA):</p>
+                <ul>
+                  <li>Bạn phải đổi ngày thi hoặc hủy thi <strong>tối thiểu 24 giờ đến 48 giờ trước giờ thi dự kiến</strong>.</li>
+                  <li>Việc đổi ngày thi hoàn toàn miễn phí nếu thực hiện đúng hạn. Khi bạn hủy thi, mã voucher của bạn sẽ được kích hoạt trở lại (với điều kiện voucher còn hạn sử dụng).</li>
+                  <li>Quá thời hạn quy định, bạn sẽ mất 100% phí voucher và không được hoàn tiền.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              <span class="faq-q-text">Thi online tại nhà cần chuẩn bị những gì?</span>
+              <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+            </div>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                <p>Để thi online (OnVUE) thành công, bạn cần đảm bảo các điều kiện kỹ thuật và môi trường sau:</p>
+                <ul>
+                  <li><strong>Máy tính:</strong> Có camera trước, mic hoạt động tốt, và cài đặt ứng dụng OnVUE. Phải là máy cá nhân (không dùng máy công ty có cài tường lửa).</li>
+                  <li><strong>Mạng:</strong> Kết nối Internet ổn định, khuyến khích dùng cáp LAN thay vì Wi-Fi.</li>
+                  <li><strong>Phòng thi:</strong> Một phòng khép kín, yên tĩnh, không có người qua lại, trên bàn làm việc không được để tài liệu, điện thoại hoặc thiết bị điện tử khác.</li>
+                  <li><strong>Giấy tờ:</strong> Hộ chiếu (Passport) còn hạn hoặc CCCD gốc để chụp ảnh xác minh danh tính.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+    </main>
+  </div>
+</div>
+
+<!-- FAQ CTA -->
+<div class="container" style="margin-bottom: 60px;">
+  <div class="faq-cta">
+    <h3>Bạn vẫn còn câu hỏi chưa được giải đáp?</h3>
+    <p>Hãy kết nối trực tiếp với các admin hỗ trợ của chúng tôi để được tư vấn nhanh chóng nhất.</p>
+    <div class="faq-cta-actions">
+      <a href="#" class="btn btn-messenger btn-lg" target="_blank" data-config="messenger">
+        <i class="fab fa-facebook-messenger"></i> Chat Messenger
+      </a>
+      <a href="contact.html" class="btn btn-outline btn-lg">
+        <i class="fas fa-envelope"></i> Gửi Email Liên Hệ
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <img src="assset/logo.png" alt="ITCert Hub" />
+        </div>
+        <p>Chuyên cung cấp voucher thi chứng chỉ IT chính hãng và dump luyện thi. Uy tín – Giá tốt – Giao nhanh cho cộng đồng IT Việt Nam.</p>
+        <div class="footer-socials">
+          <a href="#" class="footer-social" title="Facebook" data-config="facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="footer-social" title="Messenger" data-config="messenger"><i class="fab fa-facebook-messenger"></i></a>
+          <a href="#" class="footer-social" title="Telegram Group" data-config="telegram"><i class="fab fa-telegram-plane"></i></a>
+          <a href="#" class="footer-social" title="Zalo" data-config="zalo"><span style="font-size:12px;font-weight:800;">Z</span></a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Voucher Chứng Chỉ</h4>
+        <ul>
+          <li><a href="voucher.html#cisco">Cisco – CCNA, CCNP</a></li>
+          <li><a href="voucher.html#microsoft">Microsoft – Azure, SC</a></li>
+          <li><a href="voucher.html#aws">AWS – Cloud, SAA</a></li>
+          <li><a href="voucher.html#comptia">CompTIA – Security+, Net+</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Dump & Tài Liệu</h4>
+        <ul>
+          <li><a href="dump.html#cisco">Cisco Dumps</a></li>
+          <li><a href="dump.html#microsoft">Microsoft Dumps</a></li>
+          <li><a href="dump.html#aws">AWS Dumps</a></li>
+          <li><a href="dump.html">Xem tất cả</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Hỗ Trợ</h4>
+        <ul>
+          <li><a href="blog.html">Blog & Mẹo Thi</a></li>
+          <li><a href="faq.html">Câu Hỏi Thường Gặp</a></li>
+          <li><a href="contact.html">Liên Hệ / Đặt Hàng</a></li>
+          <li><a href="#" data-config="phone"><span data-config="phoneNumber">0912 345 678</span></a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 ITCert Hub. Tất cả quyền được bảo lưu.</p>
+      <p>Voucher Chính Hãng · Giao Nhanh · Hỗ Trợ 7/7</p>
+    </div>
+  </div>
+</footer>
+
+<button class="back-to-top" title="Về đầu trang"><i class="fas fa-arrow-up"></i></button>
+
+<!-- JS: core (mọi trang) → faq (chỉ trang này) -->
+<script src="js/config.js"></script>
+<script src="js/core.js"></script>
+<script src="js/faq.js"></script>
+
+</body>
+</html>
