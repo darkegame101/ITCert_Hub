@@ -203,6 +203,11 @@
   flex-shrink: 0;
   transition: var(--ease);
 }
+.dropdown .dd-icon img {
+  width: 14px;
+  height: 14px;
+  object-fit: contain;
+}
 
 /* Custom brand colors for dropdown icons based on href targets */
 .dropdown a[href*="cisco"] .dd-icon {
@@ -772,23 +777,34 @@
     display: none;
   }
 
+  .header-actions {
+    margin-left: auto;
+  }
+
   .hamburger {
     display: flex;
+    background: var(--bg-card);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.02);
   }
 
   .header-inner {
-    height: 76px;
+    height: 64px;
+    gap: 16px;
   }
 
   .logo {
-    height: 76px;
-    width: 74px;
+    height: 50px;
+    width: 50px;
     align-items: flex-start;
+    overflow: hidden;
   }
   .logo img {
-    height: 122px;
-    margin-top: -21px;
-    margin-left: -24px;
+    height: 80px;
+    width: auto;
+    max-width: none;
+    margin-top: -13px;
+    margin-left: -16px;
+    object-fit: fill;
   }
 
   .footer-grid {
@@ -804,6 +820,14 @@
 
   .social-float {
     display: none;
+  }
+
+  .support-trigger {
+    width: 48px;
+    height: 48px;
+    font-size: 18px;
+    bottom: 20px;
+    right: 20px;
   }
 }
 

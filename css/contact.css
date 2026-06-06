@@ -19,6 +19,13 @@
 }
 
 /* Info side */
+.contact-info {
+  background: var(--bg-card);
+  border: 1px solid rgba(229, 231, 235, 0.75);
+  border-radius: var(--r-xl);
+  padding: 36px;
+  box-shadow: 0 4px 24px rgba(15, 23, 42, 0.04), 0 1px 3px rgba(0, 0, 0, 0.01);
+}
 .contact-info h2 { font-size: 22px; margin-bottom: 6px; }
 .contact-info > p { color: var(--text-muted); font-size: 14.5px; margin-bottom: 28px; }
 
@@ -48,9 +55,9 @@
 /* Social quick buttons */
 .contact-socials { display: flex; gap: 10px; margin-top: 28px; margin-bottom: 28px; }
 .contact-social-btn {
-  display: flex; align-items: center; gap: 8px;
-  padding: 10px 16px;
-  border-radius: var(--r-md);
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  padding: 12px 16px;
+  border-radius: 100px; /* Pill shape */
   font-size: 14px; font-weight: 600;
   transition: var(--ease);
 }
@@ -69,17 +76,55 @@
   border-bottom: 1px solid var(--border);
 }
 
-.payment-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.payment-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
 
 .payment-method {
-  display: flex; align-items: center; gap: 8px;
-  padding: 10px 12px;
-  background: var(--bg-card);
-  border: 1px solid var(--border);
+  display: flex; align-items: center; gap: 10px;
+  padding: 12px 14px;
+  background: #111827; /* Black background */
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: var(--r-md);
-  font-size: 13px; color: var(--text-muted);
+  font-size: 13.5px; color: #f9fafb; /* Bright white text */
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: var(--ease);
 }
-.payment-method i { color: var(--red); font-size: 16px; }
+.payment-method:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+}
+.payment-method i { font-size: 18px; }
+
+/* Brand Icon Colors */
+.payment-method .fa-university { color: #10b981; } /* Emerald for Bank */
+
+/* CSS Logos */
+.css-logo-momo {
+  display: inline-flex; align-items: center; justify-content: center;
+  background: #a50064; color: #fff;
+  font-family: Arial, sans-serif; font-weight: 800; font-size: 11px;
+  padding: 4px 6px; border-radius: 6px; letter-spacing: -0.5px;
+  line-height: 1; margin-right: 4px;
+}
+
+.css-logo-vnpay {
+  display: inline-flex; align-items: center; justify-content: center;
+  background: #fff; padding: 2px 4px; border-radius: 4px;
+  font-family: 'Arial Black', Impact, sans-serif; font-size: 14px;
+  letter-spacing: -0.5px; line-height: 1; margin-right: 4px;
+}
+.css-logo-vnpay span:first-child { color: #ed1c24; }
+.css-logo-vnpay span:last-child { color: #005aaa; }
+
+.css-logo-paypal {
+  display: inline-flex; align-items: center; justify-content: center;
+  background: #fff; padding: 2px 6px; border-radius: 4px;
+  font-family: Arial, sans-serif; font-size: 14px; font-weight: 800; font-style: italic;
+  letter-spacing: -0.5px; line-height: 1; margin-right: 4px;
+}
+.css-logo-paypal i { color: #003087; font-size: 14px; margin-right: 2px; }
+.css-logo-paypal span:nth-child(2) { color: #003087; }
+.css-logo-paypal span:last-child { color: #0079c1; }
 
 /* Form side */
 .contact-form-wrap {
@@ -164,13 +209,35 @@
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 1024px) {
-  .contact-layout { grid-template-columns: 1fr; }
+  .contact-layout { grid-template-columns: 1fr; gap: 32px; }
   .hours-grid { grid-template-columns: 1fr; }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
+  .contact-hero { padding: 32px 0 24px; }
+  .contact-layout { gap: 24px; padding: 32px 0; }
+  
+  .contact-info { padding: 24px; border-radius: var(--r-lg); }
+  .contact-info h2 { font-size: 20px; }
+  .contact-info > p { margin-bottom: 20px; font-size: 14px; }
+  
+  .contact-item { margin-bottom: 16px; gap: 12px; }
+  .contact-item-icon { width: 40px; height: 40px; font-size: 15px; border-radius: 50%; } /* Round icons on mobile */
+  .contact-item-label { font-size: 11px; }
+  .contact-item-value { font-size: 14px; }
+  
+  .contact-socials { flex-wrap: wrap; margin-top: 24px; margin-bottom: 24px; gap: 8px; }
+  .contact-social-btn { padding: 10px 14px; font-size: 13px; }
+  
   .product-options { grid-template-columns: 1fr; }
-  .contact-socials { flex-wrap: wrap; }
   .payment-grid { grid-template-columns: 1fr; }
-  .contact-form-wrap { padding: 20px; }
+  .contact-form-wrap { padding: 24px; border-radius: var(--r-lg); }
+}
+
+@media (max-width: 400px) {
+  .contact-social-btn { flex: 1 1 100%; justify-content: center; }
+  .contact-form-wrap { padding: 20px 16px; }
+  .contact-info { padding: 20px 16px; }
+  .contact-item-icon { width: 36px; height: 36px; font-size: 14px; }
+  .contact-item-value { font-size: 13.5px; }
 }
