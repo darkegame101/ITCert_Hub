@@ -58,8 +58,6 @@
   z-index: 200;
   background: rgba(255, 255, 255, 0.97);
   border-bottom: 1px solid var(--border);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
   transition: var(--ease);
 }
 
@@ -882,13 +880,11 @@
   height: 60px;
   width: auto;
   object-fit: contain;
-  filter: brightness(1.1) contrast(1.02);
   transition: filter 0.22s ease, transform 0.22s ease;
 }
 
 .cert-logo-item:hover img {
-  filter: brightness(1.25) contrast(1.05);
-}
+  }
 
 @keyframes marquee-scroll {
   0%   { transform: translateX(0); }
