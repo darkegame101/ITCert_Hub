@@ -80,19 +80,25 @@
     }
   });
 
-  /* ── Dynamic Contact Configuration Mapping ── */
-  if (typeof ITCERT_CONFIG !== 'undefined') {
-    document.querySelectorAll('[data-config]').forEach(el => {
-      const key = el.dataset.config;
-      if (ITCERT_CONFIG[key]) {
-        if (el.tagName === 'A') {
-          el.href = ITCERT_CONFIG[key];
-        } else {
-          el.textContent = ITCERT_CONFIG[key];
+    /*  Dynamic Contact Configuration Mapping  */
+  window.applySocialLinks = function() {
+    if (typeof ITCERT_CONFIG !== 'undefined') {
+      document.querySelectorAll('[data-config]').forEach(el => {
+        const key = el.dataset.config;
+        if (ITCERT_CONFIG[key]) {
+          if (el.tagName === 'A') {
+            if (!el.hasAttribute('target')) el.setAttribute('target', '_blank'); // ensure target blank for social
+            el.href = ITCERT_CONFIG[key];
+          } else {
+            el.textContent = ITCERT_CONFIG[key];
+          }
         }
-      }
-    });
-  }
+      });
+    }
+  };
+  
+  // Call it initially
+  window.applySocialLinks();
 
   /* ── Support Widget Chat Popup ── */
   const trigger = document.getElementById('support-trigger');
