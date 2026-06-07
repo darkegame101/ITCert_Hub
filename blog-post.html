@@ -137,23 +137,7 @@
 </div>
 
 <!-- POST HEADER -->
-<div class="post-header">
-  <div class="container">
-    <nav class="breadcrumb">
-      <a href="index.html">Trang chủ</a>
-      <i class="fas fa-chevron-right"></i>
-      <a href="blog.html">Blog & Mẹo Thi</a>
-      <i class="fas fa-chevron-right"></i>
-      <span>Lộ Trình CCNA</span>
-    </nav>
-    <span class="post-cat-tag cat-guide" style="position:static;display:inline-block;margin-bottom:12px;">Lộ Trình</span>
-    <h1>Lộ Trình Học CCNA Từ Zero đến Pass Trong 3 Tháng</h1>
-    <div class="post-header-meta">
-      <span><i class="fas fa-calendar"></i> Đăng ngày 02/06/2026</span>
-      <span><i class="fas fa-user"></i> Tác giả: Admin ITCert Hub</span>
-      <span><i class="fas fa-clock"></i> 8 phút đọc</span>
-      <span><i class="fas fa-eye"></i> 1,240 lượt xem</span>
-    </div>
+<div class="post-header" id="blog-post-header"></div>
   </div>
 </div>
 
@@ -162,119 +146,7 @@
   <div class="post-content-wrap">
     
     <!-- Main Article -->
-    <article class="post-content">
-      <p>CCNA (Cisco Certified Network Associate) 200-301 là một trong những chứng chỉ mạng phổ biến và có giá trị nhất thế giới cho người mới bắt đầu. Nếu bạn đang muốn bước chân vào ngành Network hoặc System Admin nhưng xuất phát từ con số 0, thì bài viết này dành cho bạn. Dưới đây là lộ trình 3 tháng tự học bài bản giúp bạn tự tin vượt qua kỳ thi và tích lũy đủ kiến thức thực hành.</p>
-
-      <blockquote>
-        "Học CCNA không chỉ để lấy chứng chỉ, mà quan trọng hơn là hiểu bản chất cách các thiết bị mạng giao tiếp với nhau trong thế giới thực."
-      </blockquote>
-
-      <h2>Tháng Thứ Nhất: Xây Dựng Nền Tảng (Tuần 1 – Tuần 4)</h2>
-      <p>Nhiệm vụ trọng tâm của tháng đầu tiên là hiểu các khái niệm lý thuyết cơ bản nhất của mạng máy tính. Đừng vội vàng cấu hình thiết bị khi bạn chưa nắm rõ lý thuyết.</p>
-      
-      <h3>Tuần 1: Các Mô Hình Mạng & Thiết Bị</h3>
-      <p>Làm quen với mô hình OSI 7 lớp và mô hình TCP/IP. Đây là xương sống của toàn bộ chương trình mạng. Bạn cần nắm được chức năng của từng tầng và các giao thức hoạt động tại đó. Phân biệt được Hub, Switch, Router và hiểu cách chúng chuyển tiếp gói tin.</p>
-      
-      <h3>Tuần 2 & 3: Địa Chỉ IPv4, IPv6 và Chia Mạng Con (Subnetting)</h3>
-      <p>Đây là phần khó nhằn nhất đối với người mới bắt đầu. Bạn phải làm chủ kỹ thuật chia mạng con IPv4 nhanh bằng tay (VLSM). Hãy luyện tập tính toán subnet mask, số lượng host hữu dụng, địa chỉ mạng (network address) và địa chỉ quảng bá (broadcast address).</p>
-      
-      <h3>Tuần 4: Giới thiệu Cisco CLI và Cấu hình Switch cơ bản</h3>
-      <p>Tải phần mềm <code>Cisco Packet Tracer</code> – công cụ giả lập mạng tốt nhất dành cho người học CCNA. Học cách thao tác trong chế độ CLI (Command Line Interface), đặt tên thiết bị, cấu hình mật khẩu console, enable và telnet/ssh bảo mật.</p>
-
-      <h2>Tháng Thứ Hai: Định Tuyến & Chuyển Mạch (Tuần 5 – Tuần 8)</h2>
-      <p>Tháng thứ hai là thời gian bạn tập trung vào cấu hình các công nghệ lõi thường gặp trong môi trường doanh nghiệp.</p>
-
-      <h3>Tuần 5: Công nghệ Switch (VLAN, Trunking & Spanning Tree Protocol)</h3>
-      <ul>
-        <li>Cấu hình VLAN để chia nhóm mạng ảo.</li>
-        <li>Học về giao thức Trunking (802.1Q) để truyền tải nhiều VLAN qua 1 đường truyền vật lý.</li>
-        <li>Tìm hiểu Spanning Tree Protocol (STP) – giao thức chống loop trong mạng Switch.</li>
-      </ul>
-
-      <h3>Tuần 6 & 7: Định Tuyến (Routing) & Giao thức OSPF</h3>
-      <p>Tìm hiểu cơ chế hoạt động của Router. Thực hành định tuyến tĩnh (Static Route) và định tuyến động với <code>OSPFv2</code> (Open Shortest Path First) cho môi trường Single Area. Cấu hình định tuyến giữa các VLAN bằng kỹ thuật Router-on-a-Stick.</p>
-
-      <h3>Tuần 8: Dịch Vụ Mạng (DHCP, NAT & ACL)</h3>
-      <p>Học cách triển khai dịch vụ tự động cấp IP (DHCP), kỹ thuật dịch địa chỉ NAT (Static, Dynamic, PAT) để các máy mạng nội bộ ra được Internet, và sử dụng danh sách kiểm soát truy cập (Access Control List - ACL) để lọc traffic bảo mật cơ bản.</p>
-
-      <h2>Tháng Thứ Ba: Luyện Đề & Chuẩn Bị Thi (Tuần 9 – Tuần 12)</h2>
-      <p>Đây là giai đoạn nước rút để bạn kiểm tra lại kiến thức và tối ưu hóa điểm số của mình.</p>
-
-      <h3>Tuần 9 & 10: Tổng Hợp Lab & Ôn Luyện Lý Thuyết Nâng Cao</h3>
-      <p>Tự thiết kế một mô hình mạng doanh nghiệp thu nhỏ có đầy đủ Switch (VLAN, STP), Router (OSPF, NAT, DHCP, ACL) trên Packet Tracer và cấu hình thông mạng từ đầu đến cuối. Tìm hiểu các phần lý thuyết mới trong chương trình CCNA 200-301 như Automation, Programmability (JSON, REST API, Ansible, Chef, Puppet) và các công nghệ Wireless (WLC, AP).</p>
-
-      <h3>Tuần 11 & 12: Luyện Đề Thi Thử (Luyện Dump)</h3>
-      <p>Sử dụng đề thi thử (Dump) của <strong>ITCert Hub</strong> để kiểm tra sự sẵn sàng. Bộ dump chứa các câu hỏi rất sát đề thi thật.</p>
-      <ul>
-        <li>Làm đề thi thử với thời gian khắt khe để quen áp lực phòng thi.</li>
-        <li>Ghi chép lại các câu hỏi làm sai, tra cứu lại lý thuyết để hiểu vì sao sai thay vì chỉ cố nhớ đáp án.</li>
-        <li>Đảm bảo điểm thi thử ổn định ở mức 85-90% trước khi đăng ký thi thật.</li>
-      </ul>
-
-      <h2>Các Tài Nguyên Học Tập Khuyên Dùng</h2>
-      <ul>
-        <li><strong>Khóa học Video:</strong> Jeremy's IT Lab (miễn phí trên YouTube) hoặc khóa CCNA của Neil Anderson (Udemy).</li>
-        <li><strong>Sách:</strong> CCNA 200-301 Official Cert Guide của tác giả Wendell Odom.</li>
-        <li><strong>Mã Voucher thi giá tốt:</strong> Xem tại trang <a href="voucher.html">Voucher ITCert Hub</a> để nhận mã giảm giá lên đến 30%.</li>
-        <li><strong>Đề ôn luyện:</strong> Bộ đề thi thử <a href="dump.html">Cisco Dump CCNA</a> được cập nhật mới nhất.</li>
-      </ul>
-
-      <div class="post-tags">
-        <span class="tag-pill">CCNA</span>
-        <span class="tag-pill">Cisco</span>
-        <span class="tag-pill">Lộ Trình</span>
-        <span class="tag-pill">Tự Học IT</span>
-        <span class="tag-pill">Dump Luyện Thi</span>
-      </div>
-
-      <!-- Related Posts Section -->
-      <div class="related-posts">
-        <h3>Bài viết liên quan</h3>
-        <div class="related-grid">
-          
-          <div class="post-card" data-cat="tips" style="flex-direction:column;">
-            <div class="post-thumb" style="background:linear-gradient(135deg,#060810,#0a1228);height:120px;">
-              <i class="fab fa-microsoft" style="font-size:32px;"></i>
-              <span class="post-cat-tag cat-tips">Mẹo Thi</span>
-            </div>
-            <div class="post-body" style="padding:14px;">
-              <div class="post-meta" style="font-size:11px;">
-                <span><i class="fas fa-calendar"></i> 28/05/2026</span>
-              </div>
-              <h4 style="font-size:14px;margin-top:6px;"><a href="blog-post.html" class="post-title-link">10 Mẹo Vàng Để Pass AZ-900 Ngay Lần Đầu</a></h4>
-            </div>
-          </div>
-
-          <div class="post-card" data-cat="howto" style="flex-direction:column;">
-            <div class="post-thumb" style="background:linear-gradient(135deg,#060d0a,#0a2a1a);height:120px;">
-              <i class="fas fa-book-open" style="font-size:32px;"></i>
-              <span class="post-cat-tag cat-tips">Hướng Dẫn</span>
-            </div>
-            <div class="post-body" style="padding:14px;">
-              <div class="post-meta" style="font-size:11px;">
-                <span><i class="fas fa-calendar"></i> 10/05/2026</span>
-              </div>
-              <h4 style="font-size:14px;margin-top:6px;"><a href="blog-post.html" class="post-title-link">Cách Sử Dụng Dump Hiệu Quả Nhất</a></h4>
-            </div>
-          </div>
-
-          <div class="post-card" data-cat="review" style="flex-direction:column;">
-            <div class="post-thumb" style="background:linear-gradient(135deg,#0d060d,#250a25);height:120px;">
-              <i class="fas fa-shield-halved" style="font-size:32px;"></i>
-              <span class="post-cat-tag cat-review">Đánh Giá</span>
-            </div>
-            <div class="post-body" style="padding:14px;">
-              <div class="post-meta" style="font-size:11px;">
-                <span><i class="fas fa-calendar"></i> 20/05/2026</span>
-              </div>
-              <h4 style="font-size:14px;margin-top:6px;"><a href="blog-post.html" class="post-title-link">So Sánh Security+ vs CEH Chi Tiết</a></h4>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-    </article>
+    <article class="post-content" id="blog-post-content"></article>
 
     <!-- Sidebar -->
     <aside class="blog-sidebar">
@@ -400,6 +272,7 @@
 
 <script src="assets/js/config.js"></script>
 <script src="assets/js/core.js"></script>
+<script src="assets/js/blog-config.js"></script>
 <script src="assets/js/blog.js"></script>
 </body>
 </html>
