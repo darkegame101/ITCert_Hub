@@ -45,7 +45,7 @@
           const originalPrice = v.original || '';
           
           let html = `
-            <div class="voucher-card fade-in" data-vendor="${v.vendor.toLowerCase()}" data-level="${v.level.toLowerCase()}">
+            <div class="voucher-card" data-vendor="${v.vendor.toLowerCase()}" data-level="${v.level.toLowerCase()}">
               <div class="voucher-card-stripe" style="background-color: ${v.color || '#333'}"></div>
               <div class="voucher-card-header">
                 <div class="voucher-vendor-info">

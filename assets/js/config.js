@@ -5,10 +5,10 @@
 const ITCERT_CONFIG = {
   facebook: "https://facebook.com/itcerthub",
   messenger: "https://m.me/ItCertHub",
-  zalo: "https://zalo.me/0912345678",
-  whatsapp: "https://wa.me/84912345678",
-  phone: "tel:0912345678",
-  phoneNumber: "0912 345 678",
+  zalo: "https://zalo.me/0382411337",
+  whatsapp: "https://wa.me/84382411337",
+  phone: "tel:0382411337",
+  phoneNumber: "038 241 1337",
   email: "info@itcerthub.vn",
   emailLink: "mailto:info@itcerthub.vn",
   telegram: "https://t.me/itcerthub_group"
