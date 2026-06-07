@@ -1,6 +1,6 @@
-/* =============================================
-   js/voucher.js – Dùng cho voucher.html
-   Bao gồm: Dynamic MVC Rendering, vendor tab filter, level filter, search
+﻿/* =============================================
+   js/voucher.js â€“ DÃ¹ng cho voucher.html
+   Bao gá»“m: Dynamic MVC Rendering, vendor tab filter, level filter, search
    ============================================= */
 
 (function () {
@@ -33,7 +33,7 @@
       'Cisco': 'https://upload.wikimedia.org/wikipedia/commons/0/08/Cisco_logo_blue_2016.svg'
   };
 
-  /* ── Render Logic (View) ── */
+  /* â”€â”€ Render Logic (View) â”€â”€ */
   function renderVouchers(vouchers) {
       if (!voucherGrid) return;
       voucherGrid.innerHTML = '';
@@ -45,7 +45,7 @@
           const originalPrice = v.original || '';
           
           let html = `
-            <div class="voucher-card fade-in" data-vendor="${v.vendor.toLowerCase()}" data-level="${v.level.toLowerCase()}">
+            <div class="voucher-card" data-vendor="${v.vendor.toLowerCase()}" data-level="${v.level.toLowerCase()}">
               <div class="voucher-card-stripe" style="background-color: ${v.color || '#333'}"></div>
               <div class="voucher-card-header">
                 <div class="voucher-vendor-info">
@@ -56,10 +56,10 @@
               </div>
               <div class="voucher-card-body">
                 <div class="voucher-exam-code">${v.code}</div>
-                <div class="voucher-name" style="-webkit-line-clamp: 2; display: -webkit-box; -webkit-box-orient: vertical; overflow: hidden; height: 48px;">${v.name.replace(' - Voucher Giảm Giá 100%', '').trim()}</div>
+                <div class="voucher-name" style="-webkit-line-clamp: 2; display: -webkit-box; -webkit-box-orient: vertical; overflow: hidden; height: 48px;">${v.name.replace(' - Voucher Giáº£m GiÃ¡ 100%', '').trim()}</div>
                 <div class="voucher-meta">
-                  <div class="voucher-meta-item"><i class="fas fa-clock"></i> Hiệu lực 180 ngày</div>
-                  <div class="voucher-meta-item"><i class="fas fa-globe"></i> Thi tại hãng / VUE</div>
+                  <div class="voucher-meta-item"><i class="fas fa-clock"></i> Hiá»‡u lá»±c 180 ngÃ y</div>
+                  <div class="voucher-meta-item"><i class="fas fa-globe"></i> Thi táº¡i hÃ£ng / VUE</div>
                 </div>
                 <div class="voucher-price-block mt-3">
                   <span class="price-old" style="font-size: 11px;">${originalPrice.replace(' (~', '<br>(~').replace(')', ')')}</span>
@@ -81,7 +81,7 @@
       }
   }
 
-  /* ── Filter Logic (Controller) ── */
+  /* â”€â”€ Filter Logic (Controller) â”€â”€ */
   function applyFilters() {
     let filtered = vouchersData.filter(v => {
       const vendorMatch = activeVendor === 'all' || v.vendor.toLowerCase() === activeVendor;
@@ -94,11 +94,11 @@
     renderVouchers(filtered);
 
     if (resultsInfo) {
-      resultsInfo.innerHTML = `Đang hiển thị <strong>${filtered.length}</strong> voucher`;
+      resultsInfo.innerHTML = `Äang hiá»ƒn thá»‹ <strong>${filtered.length}</strong> voucher`;
     }
   }
 
-  /* ── Events ── */
+  /* â”€â”€ Events â”€â”€ */
   vendorTabs.forEach(tab => {
     tab.addEventListener('click', () => {
       vendorTabs.forEach(t => t.classList.remove('active'));
@@ -124,7 +124,8 @@
     });
   }
 
-  /* ── Initial Render ── */
+  /* â”€â”€ Initial Render â”€â”€ */
   applyFilters();
 
 })();
+

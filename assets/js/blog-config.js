@@ -1,146 +1,146 @@
-const BLOG_DATA = {
+﻿const BLOG_DATA = {
     posts: [
         {
             id: 'benchmark-docker-network',
             title: 'Benchmark: Docker bridge vs host network vs CNI overlay',
             category: 'sysadmin',
-            date: '25/03/2026',
-            author: 'Nguyễn Thanh Tuấn',
+            date: '03/01/2026',
+            author: 'Nguyá»…n Thanh Tuáº¥n',
             thumbnail: 'assets/images/docker-benchmark.jpg',
-            excerpt: 'Chênh lệch hiệu năng thực tế lớn đến đâu giữa Docker Bridge, Host Network và CNI Overlay? Đo lường độ trễ mạng thực tế.',
-            content: `<p><strong>Bài viết chia sẻ kết quả benchmark từ anh Nguyễn Thanh Tuấn trên cộng đồng DevOps VN.</strong></p>
+            excerpt: 'ChÃªnh lá»‡ch hiá»‡u nÄƒng thá»±c táº¿ lá»›n Ä‘áº¿n Ä‘Ã¢u giá»¯a Docker Bridge, Host Network vÃ  CNI Overlay? Äo lÆ°á»ng Ä‘á»™ trá»… máº¡ng thá»±c táº¿.',
+            content: `<p><strong>BÃ i viáº¿t chia sáº» káº¿t quáº£ benchmark tá»« anh Nguyá»…n Thanh Tuáº¥n trÃªn cá»™ng Ä‘á»“ng DevOps VN.</strong></p>
 
 <img src="assets/images/docker-benchmark.jpg" alt="Benchmark" style="width:100%; border-radius:12px; margin-bottom:20px;">
 
-<p>Hiện tại đa phần hạ tầng dùng Kubernetes rồi có mấy service từ lâu đang chạy thuần Container và có issue lâu lâu mới lên chia sẻ cùng với anh em.</p>
+<p>Hiá»‡n táº¡i Ä‘a pháº§n háº¡ táº§ng dÃ¹ng Kubernetes rá»“i cÃ³ máº¥y service tá»« lÃ¢u Ä‘ang cháº¡y thuáº§n Container vÃ  cÃ³ issue lÃ¢u lÃ¢u má»›i lÃªn chia sáº» cÃ¹ng vá»›i anh em.</p>
 
-<p>Trước tôi không để ý lắm tới network mode của container, Hệ thống chậm thì thường anh em sẽ soi DB trước, rồi tới cache, rồi query, rồi code. Phần network giữa các service thường bị xem là chuyện nền. Có overhead thì chắc có, nhưng cảm giác nó không phải thứ tạo ra khác biệt lớn.</p>
+<p>TrÆ°á»›c tÃ´i khÃ´ng Ä‘á»ƒ Ã½ láº¯m tá»›i network mode cá»§a container, Há»‡ thá»‘ng cháº­m thÃ¬ thÆ°á»ng anh em sáº½ soi DB trÆ°á»›c, rá»“i tá»›i cache, rá»“i query, rá»“i code. Pháº§n network giá»¯a cÃ¡c service thÆ°á»ng bá»‹ xem lÃ  chuyá»‡n ná»n. CÃ³ overhead thÃ¬ cháº¯c cÃ³, nhÆ°ng cáº£m giÃ¡c nÃ³ khÃ´ng pháº£i thá»© táº¡o ra khÃ¡c biá»‡t lá»›n.</p>
 
-<p>Nhưng rồi đến một dạo trực Jira rảnh rảnh ngồi xem p99 của một hệ thống nội bộ.</p>
+<p>NhÆ°ng rá»“i Ä‘áº¿n má»™t dáº¡o trá»±c Jira ráº£nh ráº£nh ngá»“i xem p99 cá»§a má»™t há»‡ thá»‘ng ná»™i bá»™.</p>
 
-<p>Hệ thống đó không có dấu hiệu nghẽn rõ ràng. CPU không cao. DB không căng. Redis cũng ổn. Nhưng cứ vào giờ nhiều traffic là p99 nhảy lên khá khó chịu. Không phải kiểu sập hẳn, chỉ là mọi thứ mất độ mượt. Request nào xui thì chậm hẳn ra một đoạn.</p>
+<p>Há»‡ thá»‘ng Ä‘Ã³ khÃ´ng cÃ³ dáº¥u hiá»‡u ngháº½n rÃµ rÃ ng. CPU khÃ´ng cao. DB khÃ´ng cÄƒng. Redis cÅ©ng á»•n. NhÆ°ng cá»© vÃ o giá» nhiá»u traffic lÃ  p99 nháº£y lÃªn khÃ¡ khÃ³ chá»‹u. KhÃ´ng pháº£i kiá»ƒu sáº­p háº³n, chá»‰ lÃ  má»i thá»© máº¥t Ä‘á»™ mÆ°á»£t. Request nÃ o xui thÃ¬ cháº­m háº³n ra má»™t Ä‘oáº¡n.</p>
 
-<p>Lúc đầu tôi cũng nghĩ chắc do app. Sau đó lôi connection pool ra xem, rồi nhìn GC, rồi soi timeout giữa các service. Cuối cùng mới thấy network path giữa service này với service kia cũng góp phần không nhỏ.</p>
+<p>LÃºc Ä‘áº§u tÃ´i cÅ©ng nghÄ© cháº¯c do app. Sau Ä‘Ã³ lÃ´i connection pool ra xem, rá»“i nhÃ¬n GC, rá»“i soi timeout giá»¯a cÃ¡c service. Cuá»‘i cÃ¹ng má»›i tháº¥y network path giá»¯a service nÃ y vá»›i service kia cÅ©ng gÃ³p pháº§n khÃ´ng nhá».</p>
 
-<p>Thế là tôi ngồi đo lại cho rõ, với ba kiểu hay gặp nhất:</p>
+<p>Tháº¿ lÃ  tÃ´i ngá»“i Ä‘o láº¡i cho rÃµ, vá»›i ba kiá»ƒu hay gáº·p nháº¥t:</p>
 
-<p>Điều tôi muốn biết khá đơn giản: với request nhỏ, gọi qua gọi lại liên tục giữa các service, thì phần chênh này thực tế lớn đến đâu. Nhất là ở p95 với p99.</p>
+<p>Äiá»u tÃ´i muá»‘n biáº¿t khÃ¡ Ä‘Æ¡n giáº£n: vá»›i request nhá», gá»i qua gá»i láº¡i liÃªn tá»¥c giá»¯a cÃ¡c service, thÃ¬ pháº§n chÃªnh nÃ y thá»±c táº¿ lá»›n Ä‘áº¿n Ä‘Ã¢u. Nháº¥t lÃ  á»Ÿ p95 vá»›i p99.</p>
 
-<h2>Bối cảnh bài benchmark</h2>
+<h2>Bá»‘i cáº£nh bÃ i benchmark</h2>
 
-<p>Case tôi dùng cũng không có gì lạ.</p>
+<p>Case tÃ´i dÃ¹ng cÅ©ng khÃ´ng cÃ³ gÃ¬ láº¡.</p>
 
-<p>Một service A gọi sang service B bằng HTTP nội bộ. Request JSON khoảng 1KB. Response cũng cỡ đó. Tôi bỏ TLS ra để nhìn cho sạch phần network, đỡ trộn thêm chi phí mã hóa. Bên service nhận cũng làm rất ít việc, gần như nhận request xong trả response lại luôn.</p>
+<p>Má»™t service A gá»i sang service B báº±ng HTTP ná»™i bá»™. Request JSON khoáº£ng 1KB. Response cÅ©ng cá»¡ Ä‘Ã³. TÃ´i bá» TLS ra Ä‘á»ƒ nhÃ¬n cho sáº¡ch pháº§n network, Ä‘á»¡ trá»™n thÃªm chi phÃ­ mÃ£ hÃ³a. BÃªn service nháº­n cÅ©ng lÃ m ráº¥t Ã­t viá»‡c, gáº§n nhÆ° nháº­n request xong tráº£ response láº¡i luÃ´n.</p>
 
-<p>Ý là tôi không muốn benchmark framework hay business logic. Tôi chỉ muốn bóc phần network giữa service với service ra nhìn riêng.</p>
+<p>Ã lÃ  tÃ´i khÃ´ng muá»‘n benchmark framework hay business logic. TÃ´i chá»‰ muá»‘n bÃ³c pháº§n network giá»¯a service vá»›i service ra nhÃ¬n riÃªng.</p>
 
-<p>Tôi chạy hai tình huống.</p>
+<p>TÃ´i cháº¡y hai tÃ¬nh huá»‘ng.</p>
 
-<p>Một là hai service nằm cùng một node. Case này ngoài đời gặp khá nhiều, nhất là khi hệ thống còn chưa lớn hoặc scheduler đặt trùng máy.</p>
+<p>Má»™t lÃ  hai service náº±m cÃ¹ng má»™t node. Case nÃ y ngoÃ i Ä‘á»i gáº·p khÃ¡ nhiá»u, nháº¥t lÃ  khi há»‡ thá»‘ng cÃ²n chÆ°a lá»›n hoáº·c scheduler Ä‘áº·t trÃ¹ng mÃ¡y.</p>
 
-<p>Hai là hai service nằm khác node. Cái này mới sát production hơn, vì khi đã scale ra vài máy thì chuyện gọi khác node là bình thường.</p>
+<p>Hai lÃ  hai service náº±m khÃ¡c node. CÃ¡i nÃ y má»›i sÃ¡t production hÆ¡n, vÃ¬ khi Ä‘Ã£ scale ra vÃ i mÃ¡y thÃ¬ chuyá»‡n gá»i khÃ¡c node lÃ  bÃ¬nh thÆ°á»ng.</p>
 
-<p>Máy test là 8 vCPU, 16GB RAM, 10GbE. Mỗi bài tôi warm-up 10 giây, đo 60 giây, chạy 5 vòng rồi lấy median. Client benchmark nằm ở máy riêng để đỡ ảnh hưởng lẫn nhau.</p>
+<p>MÃ¡y test lÃ  8 vCPU, 16GB RAM, 10GbE. Má»—i bÃ i tÃ´i warm-up 10 giÃ¢y, Ä‘o 60 giÃ¢y, cháº¡y 5 vÃ²ng rá»“i láº¥y median. Client benchmark náº±m á»Ÿ mÃ¡y riÃªng Ä‘á»ƒ Ä‘á»¡ áº£nh hÆ°á»Ÿng láº«n nhau.</p>
 
-<h2>Ba kiểu network tôi đem ra so</h2>
+<h2>Ba kiá»ƒu network tÃ´i Ä‘em ra so</h2>
 
-<p>Bridge thì chắc ai chạy Docker cũng quen. Đây là mode mặc định. Container có network namespace riêng, đi qua bridge của host, thường kèm theo NAT và conntrack trong đường đi.</p>
+<p>Bridge thÃ¬ cháº¯c ai cháº¡y Docker cÅ©ng quen. ÄÃ¢y lÃ  mode máº·c Ä‘á»‹nh. Container cÃ³ network namespace riÃªng, Ä‘i qua bridge cá»§a host, thÆ°á»ng kÃ¨m theo NAT vÃ  conntrack trong Ä‘Æ°á»ng Ä‘i.</p>
 
-<p>Host network thì đơn giản hơn nhiều. Container dùng thẳng network stack của host. Ít lớp hơn, ít xử lý hơn, bù lại phần cách ly mạng cũng kém đi.</p>
+<p>Host network thÃ¬ Ä‘Æ¡n giáº£n hÆ¡n nhiá»u. Container dÃ¹ng tháº³ng network stack cá»§a host. Ãt lá»›p hÆ¡n, Ã­t xá»­ lÃ½ hÆ¡n, bÃ¹ láº¡i pháº§n cÃ¡ch ly máº¡ng cÅ©ng kÃ©m Ä‘i.</p>
 
-<p>Overlay thì tôi test theo kiểu phổ biến trong cluster multi-node, dạng VXLAN. Cái được là network model gọn hơn khi chạy nhiều node. Cái mất là packet phải đi vòng hơn và thêm vài lớp xử lý.</p>
+<p>Overlay thÃ¬ tÃ´i test theo kiá»ƒu phá»• biáº¿n trong cluster multi-node, dáº¡ng VXLAN. CÃ¡i Ä‘Æ°á»£c lÃ  network model gá»n hÆ¡n khi cháº¡y nhiá»u node. CÃ¡i máº¥t lÃ  packet pháº£i Ä‘i vÃ²ng hÆ¡n vÃ  thÃªm vÃ i lá»›p xá»­ lÃ½.</p>
 
-<h2>Kết quả khi hai service nằm cùng node</h2>
+<h2>Káº¿t quáº£ khi hai service náº±m cÃ¹ng node</h2>
 
-<p>Bảng đầu tiên ra khá đúng với những gì tôi đoán, nhưng mức chênh không đến mức quá ghê gớm.</p>
+<p>Báº£ng Ä‘áº§u tiÃªn ra khÃ¡ Ä‘Ãºng vá»›i nhá»¯ng gÃ¬ tÃ´i Ä‘oÃ¡n, nhÆ°ng má»©c chÃªnh khÃ´ng Ä‘áº¿n má»©c quÃ¡ ghÃª gá»›m.</p>
 
-<p>Host network đẹp nhất, cái này không có gì bất ngờ.</p>
+<p>Host network Ä‘áº¹p nháº¥t, cÃ¡i nÃ y khÃ´ng cÃ³ gÃ¬ báº¥t ngá».</p>
 
-<p>Bridge thấp hơn một chút. p99 từ 1.60ms lên 2.10ms. Overlay lên 2.70ms.</p>
+<p>Bridge tháº¥p hÆ¡n má»™t chÃºt. p99 tá»« 1.60ms lÃªn 2.10ms. Overlay lÃªn 2.70ms.</p>
 
-<p>Điều tôi thấy đáng nói là bridge thực ra ổn hơn nhiều người hay nghĩ. Nếu chỉ nhìn case cùng node thì tôi không thấy lý do gì phải dị ứng với nó cả. Nó không đẹp bằng host network, nhưng cũng chưa đủ tệ để thành vấn đề trong đa số hệ thống bình thường.</p>
+<p>Äiá»u tÃ´i tháº¥y Ä‘Ã¡ng nÃ³i lÃ  bridge thá»±c ra á»•n hÆ¡n nhiá»u ngÆ°á»i hay nghÄ©. Náº¿u chá»‰ nhÃ¬n case cÃ¹ng node thÃ¬ tÃ´i khÃ´ng tháº¥y lÃ½ do gÃ¬ pháº£i dá»‹ á»©ng vá»›i nÃ³ cáº£. NÃ³ khÃ´ng Ä‘áº¹p báº±ng host network, nhÆ°ng cÅ©ng chÆ°a Ä‘á»§ tá»‡ Ä‘á»ƒ thÃ nh váº¥n Ä‘á» trong Ä‘a sá»‘ há»‡ thá»‘ng bÃ¬nh thÆ°á»ng.</p>
 
-<p>Overlay thì bắt đầu lộ giá rồi. Dù vậy, nếu chỉ dừng ở case cùng node thì vẫn chưa thấy nó đáng sợ.</p>
+<p>Overlay thÃ¬ báº¯t Ä‘áº§u lá»™ giÃ¡ rá»“i. DÃ¹ váº­y, náº¿u chá»‰ dá»«ng á»Ÿ case cÃ¹ng node thÃ¬ váº«n chÆ°a tháº¥y nÃ³ Ä‘Ã¡ng sá»£.</p>
 
-<h2>Sang case khác node mới bắt đầu thấy rõ</h2>
+<h2>Sang case khÃ¡c node má»›i báº¯t Ä‘áº§u tháº¥y rÃµ</h2>
 
-<p>Khác biệt lộ ra rõ hơn khi request phải đi từ máy này sang máy kia.</p>
+<p>KhÃ¡c biá»‡t lá»™ ra rÃµ hÆ¡n khi request pháº£i Ä‘i tá»« mÃ¡y nÃ y sang mÃ¡y kia.</p>
 
-<p>Đến đây thì tôi gần như không còn quan tâm p50 nữa. p50 vẫn khá hiền. Tất cả vẫn quanh 1ms đến 1.5ms. Nếu chỉ nhìn median thì rất dễ kết luận là network mode không ảnh hưởng bao nhiêu.</p>
+<p>Äáº¿n Ä‘Ã¢y thÃ¬ tÃ´i gáº§n nhÆ° khÃ´ng cÃ²n quan tÃ¢m p50 ná»¯a. p50 váº«n khÃ¡ hiá»n. Táº¥t cáº£ váº«n quanh 1ms Ä‘áº¿n 1.5ms. Náº¿u chá»‰ nhÃ¬n median thÃ¬ ráº¥t dá»… káº¿t luáº­n lÃ  network mode khÃ´ng áº£nh hÆ°á»Ÿng bao nhiÃªu.</p>
 
-<p>Nhưng nhìn sang p99 thì câu chuyện khác hẳn.</p>
+<p>NhÆ°ng nhÃ¬n sang p99 thÃ¬ cÃ¢u chuyá»‡n khÃ¡c háº³n.</p>
 
-<p>Host network ở 4.8ms. Bridge lên 6.9ms. Overlay lên 10.8ms.</p>
+<p>Host network á»Ÿ 4.8ms. Bridge lÃªn 6.9ms. Overlay lÃªn 10.8ms.</p>
 
-<p>Một hop thì con số này có thể vẫn chịu được. Nhưng hệ thống microservice hiếm khi chỉ có một hop. Một request đi qua gateway, auth, user service, rồi thêm một hai service phụ nữa thì phần xấu nhất của từng hop cộng lại rất nhanh. Đó là lúc cả hệ thống bắt đầu cho cảm giác ì ra dù nhìn từng chỗ riêng lẻ chưa chắc thấy nghẽn.</p>
+<p>Má»™t hop thÃ¬ con sá»‘ nÃ y cÃ³ thá»ƒ váº«n chá»‹u Ä‘Æ°á»£c. NhÆ°ng há»‡ thá»‘ng microservice hiáº¿m khi chá»‰ cÃ³ má»™t hop. Má»™t request Ä‘i qua gateway, auth, user service, rá»“i thÃªm má»™t hai service phá»¥ ná»¯a thÃ¬ pháº§n xáº¥u nháº¥t cá»§a tá»«ng hop cá»™ng láº¡i ráº¥t nhanh. ÄÃ³ lÃ  lÃºc cáº£ há»‡ thá»‘ng báº¯t Ä‘áº§u cho cáº£m giÃ¡c Ã¬ ra dÃ¹ nhÃ¬n tá»«ng chá»— riÃªng láº» chÆ°a cháº¯c tháº¥y ngháº½n.</p>
 
-<p>Tôi nghĩ đây là chỗ nhiều team dễ bỏ sót nhất. Mỗi service nhìn riêng đều có vẻ ổn. Nhưng phần latency xấu của từng hop cộng lại thì không ổn chút nào.</p>
+<p>TÃ´i nghÄ© Ä‘Ã¢y lÃ  chá»— nhiá»u team dá»… bá» sÃ³t nháº¥t. Má»—i service nhÃ¬n riÃªng Ä‘á»u cÃ³ váº» á»•n. NhÆ°ng pháº§n latency xáº¥u cá»§a tá»«ng hop cá»™ng láº¡i thÃ¬ khÃ´ng á»•n chÃºt nÃ o.</p>
 
-<h2>Tôi thử thêm burst traffic</h2>
+<h2>TÃ´i thá»­ thÃªm burst traffic</h2>
 
-<p>Production không chạy đều như máy phát nhịp, nên tôi thêm một bài nữa. Traffic tăng gấp đôi trong một đoạn ngắn rồi hạ xuống lại.</p>
+<p>Production khÃ´ng cháº¡y Ä‘á»u nhÆ° mÃ¡y phÃ¡t nhá»‹p, nÃªn tÃ´i thÃªm má»™t bÃ i ná»¯a. Traffic tÄƒng gáº¥p Ä‘Ã´i trong má»™t Ä‘oáº¡n ngáº¯n rá»“i háº¡ xuá»‘ng láº¡i.</p>
 
-<p>Bảng này nhìn phát ra vấn đề luôn.</p>
+<p>Báº£ng nÃ y nhÃ¬n phÃ¡t ra váº¥n Ä‘á» luÃ´n.</p>
 
-<p>Lúc có burst thì overlay bắt đầu lộ rõ nhược điểm hơn hẳn. p99 gần 19ms, trong khi host network vẫn dưới 8ms.</p>
+<p>LÃºc cÃ³ burst thÃ¬ overlay báº¯t Ä‘áº§u lá»™ rÃµ nhÆ°á»£c Ä‘iá»ƒm hÆ¡n háº³n. p99 gáº§n 19ms, trong khi host network váº«n dÆ°á»›i 8ms.</p>
 
-<p>Đây là đoạn làm tôi thấy network mode không còn là chi tiết nhỏ nữa. Nếu service của mọi người gọi nhau nhiều, request nhỏ, concurrency cao, thì network path hoàn toàn có thể ăn vào độ trễ cuối cùng nhiều hơn mình tưởng.</p>
+<p>ÄÃ¢y lÃ  Ä‘oáº¡n lÃ m tÃ´i tháº¥y network mode khÃ´ng cÃ²n lÃ  chi tiáº¿t nhá» ná»¯a. Náº¿u service cá»§a má»i ngÆ°á»i gá»i nhau nhiá»u, request nhá», concurrency cao, thÃ¬ network path hoÃ n toÃ n cÃ³ thá»ƒ Äƒn vÃ o Ä‘á»™ trá»… cuá»‘i cÃ¹ng nhiá»u hÆ¡n mÃ¬nh tÆ°á»Ÿng.</p>
 
-<h2>Vì sao overlay vấn đề nhất</h2>
+<h2>VÃ¬ sao overlay váº¥n Ä‘á» nháº¥t</h2>
 
-<p>Thật ra overlay chậm hơn cũng không có gì oan cho nó. Nó đang giải một bài toán khó hơn.</p>
+<p>Tháº­t ra overlay cháº­m hÆ¡n cÅ©ng khÃ´ng cÃ³ gÃ¬ oan cho nÃ³. NÃ³ Ä‘ang giáº£i má»™t bÃ i toÃ¡n khÃ³ hÆ¡n.</p>
 
-<p>Khi dùng overlay, mọi người đang đổi lấy:</p>
+<p>Khi dÃ¹ng overlay, má»i ngÆ°á»i Ä‘ang Ä‘á»•i láº¥y:</p>
 
-<p>Đổi lại packet phải đi qua thêm encapsulation, decapsulation, routing, policy và một loạt xử lý nữa.</p>
+<p>Äá»•i láº¡i packet pháº£i Ä‘i qua thÃªm encapsulation, decapsulation, routing, policy vÃ  má»™t loáº¡t xá»­ lÃ½ ná»¯a.</p>
 
-<p>Với request nhỏ, mấy phần chi phí cố định kiểu này lộ ra rất nhanh. Không phải do thiếu băng thông. Chủ yếu là vì bản thân request quá ngắn. Chỉ cần thêm một ít xử lý vào mỗi hop là nhìn ra ngay.</p>
+<p>Vá»›i request nhá», máº¥y pháº§n chi phÃ­ cá»‘ Ä‘á»‹nh kiá»ƒu nÃ y lá»™ ra ráº¥t nhanh. KhÃ´ng pháº£i do thiáº¿u bÄƒng thÃ´ng. Chá»§ yáº¿u lÃ  vÃ¬ báº£n thÃ¢n request quÃ¡ ngáº¯n. Chá»‰ cáº§n thÃªm má»™t Ã­t xá»­ lÃ½ vÃ o má»—i hop lÃ  nhÃ¬n ra ngay.</p>
 
-<h2>Có nên dùng host network cho mọi thứ không</h2>
+<h2>CÃ³ nÃªn dÃ¹ng host network cho má»i thá»© khÃ´ng</h2>
 
-<p>Kết luận một cái gì đó áp dụng tất cả thì chưa hay rồi.</p>
+<p>Káº¿t luáº­n má»™t cÃ¡i gÃ¬ Ä‘Ã³ Ã¡p dá»¥ng táº¥t cáº£ thÃ¬ chÆ°a hay rá»“i.</p>
 
-<p>Host network đúng là đẹp nhất nếu chỉ nhìn latency. Nhưng nó cũng mang theo một loạt thứ không vui lắm. Port đụng nhau dễ hơn. Cách ly mạng kém hơn. Vận hành container cũng mất đi một phần tiện.</p>
+<p>Host network Ä‘Ãºng lÃ  Ä‘áº¹p nháº¥t náº¿u chá»‰ nhÃ¬n latency. NhÆ°ng nÃ³ cÅ©ng mang theo má»™t loáº¡t thá»© khÃ´ng vui láº¯m. Port Ä‘á»¥ng nhau dá»… hÆ¡n. CÃ¡ch ly máº¡ng kÃ©m hÆ¡n. Váº­n hÃ nh container cÅ©ng máº¥t Ä‘i má»™t pháº§n tiá»‡n.</p>
 
-<p>Bridge thì ở giữa và khá cân bằng. Nếu hệ thống chạy ít node hoặc chưa quá nhạy p99, tôi thấy bridge đủ ổn cho rất nhiều case.</p>
+<p>Bridge thÃ¬ á»Ÿ giá»¯a vÃ  khÃ¡ cÃ¢n báº±ng. Náº¿u há»‡ thá»‘ng cháº¡y Ã­t node hoáº·c chÆ°a quÃ¡ nháº¡y p99, tÃ´i tháº¥y bridge Ä‘á»§ á»•n cho ráº¥t nhiá»u case.</p>
 
-<p>Overlay thì đương nhiên đắt hơn về latency, nhất là lúc đi khác node. Nhưng nếu đang chạy cluster nhiều node thì nhiều khi đó là cái giá phải trả để đổi lấy sự linh hoạt lúc vận hành. Lúc này câu hỏi hợp lý hơn thường là service nào đủ nhạy để mình phải tối ưu riêng cho nó, chứ không phải có nên vứt overlay đi hết hay không.</p>
+<p>Overlay thÃ¬ Ä‘Æ°Æ¡ng nhiÃªn Ä‘áº¯t hÆ¡n vá» latency, nháº¥t lÃ  lÃºc Ä‘i khÃ¡c node. NhÆ°ng náº¿u Ä‘ang cháº¡y cluster nhiá»u node thÃ¬ nhiá»u khi Ä‘Ã³ lÃ  cÃ¡i giÃ¡ pháº£i tráº£ Ä‘á»ƒ Ä‘á»•i láº¥y sá»± linh hoáº¡t lÃºc váº­n hÃ nh. LÃºc nÃ y cÃ¢u há»i há»£p lÃ½ hÆ¡n thÆ°á»ng lÃ  service nÃ o Ä‘á»§ nháº¡y Ä‘á»ƒ mÃ¬nh pháº£i tá»‘i Æ°u riÃªng cho nÃ³, chá»© khÃ´ng pháº£i cÃ³ nÃªn vá»©t overlay Ä‘i háº¿t hay khÃ´ng.</p>
 
-<h2>Vài điều sau bài test này</h2>
+<h2>VÃ i Ä‘iá»u sau bÃ i test nÃ y</h2>
 
-<p>Điều đáng nhớ nhất không phải là host network đứng đầu. Cái đó quá dễ đoán.</p>
+<p>Äiá»u Ä‘Ã¡ng nhá»› nháº¥t khÃ´ng pháº£i lÃ  host network Ä‘á»©ng Ä‘áº§u. CÃ¡i Ä‘Ã³ quÃ¡ dá»… Ä‘oÃ¡n.</p>
 
-<p>Thứ đáng nhớ hơn là bridge không tệ như tôi từng nghĩ. Còn overlay thì cái giá của nó lộ mạnh nhất ở p95 với p99, nhất là khi khác node và có burst traffic.</p>
+<p>Thá»© Ä‘Ã¡ng nhá»› hÆ¡n lÃ  bridge khÃ´ng tá»‡ nhÆ° tÃ´i tá»«ng nghÄ©. CÃ²n overlay thÃ¬ cÃ¡i giÃ¡ cá»§a nÃ³ lá»™ máº¡nh nháº¥t á»Ÿ p95 vá»›i p99, nháº¥t lÃ  khi khÃ¡c node vÃ  cÃ³ burst traffic.</p>
 
-<p>Nếu hệ thống của mọi người ít hop, timeout rộng, không quá nhạy vài mili-giây, có thể sự khác biệt này chưa thành vấn đề.</p>
+<p>Náº¿u há»‡ thá»‘ng cá»§a má»i ngÆ°á»i Ã­t hop, timeout rá»™ng, khÃ´ng quÃ¡ nháº¡y vÃ i mili-giÃ¢y, cÃ³ thá»ƒ sá»± khÃ¡c biá»‡t nÃ y chÆ°a thÃ nh váº¥n Ä‘á».</p>
 
-<p>Nhưng nếu đang chạy một đám service gọi nhau liên tục, có fan-out, có retry, và từng thắc mắc vì sao hệ thống không nghẽn hẳn mà vẫn không mượt, thì network mode là một thứ rất đáng mang ra đo lại.</p>
+<p>NhÆ°ng náº¿u Ä‘ang cháº¡y má»™t Ä‘Ã¡m service gá»i nhau liÃªn tá»¥c, cÃ³ fan-out, cÃ³ retry, vÃ  tá»«ng tháº¯c máº¯c vÃ¬ sao há»‡ thá»‘ng khÃ´ng ngháº½n háº³n mÃ  váº«n khÃ´ng mÆ°á»£t, thÃ¬ network mode lÃ  má»™t thá»© ráº¥t Ä‘Ã¡ng mang ra Ä‘o láº¡i.</p>
 
-<p>Sau lần này thì tôi không còn xem network giữa các service là chuyện nền nữa.</p>
+<p>Sau láº§n nÃ y thÃ¬ tÃ´i khÃ´ng cÃ²n xem network giá»¯a cÃ¡c service lÃ  chuyá»‡n ná»n ná»¯a.</p>
 
-<p>Host network vẫn là lựa chọn đẹp nhất nếu chỉ nhìn latency. Bridge là điểm cân bằng khá ổn. Overlay thì không miễn phí, và phần tiền mọi người trả thường nằm ở p95 với p99 chứ không nằm ở p50.</p>
+<p>Host network váº«n lÃ  lá»±a chá»n Ä‘áº¹p nháº¥t náº¿u chá»‰ nhÃ¬n latency. Bridge lÃ  Ä‘iá»ƒm cÃ¢n báº±ng khÃ¡ á»•n. Overlay thÃ¬ khÃ´ng miá»…n phÃ­, vÃ  pháº§n tiá»n má»i ngÆ°á»i tráº£ thÆ°á»ng náº±m á»Ÿ p95 vá»›i p99 chá»© khÃ´ng náº±m á»Ÿ p50.</p>
 
-<p>Cuối cùng thì cũng không có đáp án chung cho tất cả. Có chỗ cần sự đơn giản. Có chỗ cần sự linh hoạt. Có chỗ chỉ cần bớt vài mili-giây ở phần đuôi là đủ khác biệt rồi.</p>
+<p>Cuá»‘i cÃ¹ng thÃ¬ cÅ©ng khÃ´ng cÃ³ Ä‘Ã¡p Ã¡n chung cho táº¥t cáº£. CÃ³ chá»— cáº§n sá»± Ä‘Æ¡n giáº£n. CÃ³ chá»— cáº§n sá»± linh hoáº¡t. CÃ³ chá»— chá»‰ cáº§n bá»›t vÃ i mili-giÃ¢y á»Ÿ pháº§n Ä‘uÃ´i lÃ  Ä‘á»§ khÃ¡c biá»‡t rá»“i.</p>
 
-<p>Nếu muốn ra quyết định cho đúng, tốt nhất vẫn là đem workload thật của hệ thống mình ra đo. Nhưng ít nhất sau bài test này, tôi thấy phần network giữa service với service đáng để nghiêm túc hơn nhiều so với cách tôi từng nghĩ.</p>
+<p>Náº¿u muá»‘n ra quyáº¿t Ä‘á»‹nh cho Ä‘Ãºng, tá»‘t nháº¥t váº«n lÃ  Ä‘em workload tháº­t cá»§a há»‡ thá»‘ng mÃ¬nh ra Ä‘o. NhÆ°ng Ã­t nháº¥t sau bÃ i test nÃ y, tÃ´i tháº¥y pháº§n network giá»¯a service vá»›i service Ä‘Ã¡ng Ä‘á»ƒ nghiÃªm tÃºc hÆ¡n nhiá»u so vá»›i cÃ¡ch tÃ´i tá»«ng nghÄ©.</p>
 
-<h2>Thông tin nổi bật</h2>
+<h2>ThÃ´ng tin ná»•i báº­t</h2>
 
-<h2>Sự kiện phát trực tiếp​</h2>
+<h2>Sá»± kiá»‡n phÃ¡t trá»±c tiáº¿pâ€‹</h2>
 
-<h2>Sự kiện đang hiện hành</h2>
+<h2>Sá»± kiá»‡n Ä‘ang hiá»‡n hÃ nh</h2>
 
-<h2>Nội dung nổi bật</h2>
+<h2>Ná»™i dung ná»•i báº­t</h2>
 
-<h2>Bài viết khác</h2>
+<h2>BÃ i viáº¿t khÃ¡c</h2>
 
-<p>DevOps VietNamCộng đồng DevOps VietNam - Kết nối, hợp tác, chia sẻ.</p>
+<p>DevOps VietNamCá»™ng Ä‘á»“ng DevOps VietNam - Káº¿t ná»‘i, há»£p tÃ¡c, chia sáº».</p>
 
-<p>© 2017 devops.vn - Cộng đồng DevOps VietNam.</p>
+<p>Â© 2017 devops.vn - Cá»™ng Ä‘á»“ng DevOps VietNam.</p>
 
-<h2>Sự kiện đang hiện hành</h2>
+<h2>Sá»± kiá»‡n Ä‘ang hiá»‡n hÃ nh</h2>
 
-<h2>Bài viết mới nhất</h2>
+<h2>BÃ i viáº¿t má»›i nháº¥t</h2>
 
 <p>' + scriptOptions._localizedStrings.webview_notification_text + '</p>
 
@@ -150,33 +150,34 @@ const BLOG_DATA = {
         },
         {
             id: 'ccna-lo-trinh',
-            title: 'Lộ Trình Học CCNA Từ Zero đến Pass Trong 3 Tháng',
+            title: 'Lá»™ TrÃ¬nh Há»c CCNA Tá»« Zero Ä‘áº¿n Pass Trong 3 ThÃ¡ng',
             category: 'cisco',
             date: '05/06/2026',
             author: 'Admin',
             thumbnail: 'assets/images/logo.png',
-            excerpt: 'Hướng dẫn chi tiết lộ trình học CCNA 200-301 cho người mới bắt đầu: tài liệu cần có, lịch học hàng ngày, cách luyện lab...',
-            content: '<p>Nội dung đang được cập nhật...</p>'
+            excerpt: 'HÆ°á»›ng dáº«n chi tiáº¿t lá»™ trÃ¬nh há»c CCNA 200-301 cho ngÆ°á»i má»›i báº¯t Ä‘áº§u: tÃ i liá»‡u cáº§n cÃ³, lá»‹ch há»c hÃ ng ngÃ y, cÃ¡ch luyá»‡n lab...',
+            content: '<p>Ná»™i dung Ä‘ang Ä‘Æ°á»£c cáº­p nháº­t...</p>'
         },
         {
             id: 'az900-meo',
-            title: '10 Mẹo Vàng Để Pass AZ-900 Ngay Lần Đầu',
+            title: '10 Máº¹o VÃ ng Äá»ƒ Pass AZ-900 Ngay Láº§n Äáº§u',
             category: 'microsoft',
             date: '02/06/2026',
             author: 'Cloud Expert',
             thumbnail: 'assets/images/logo.png',
-            excerpt: 'Những kinh nghiệm thực tế từ hàng trăm học viên đã pass AZ-900. Tâm lý thi, cách quản lý thời gian và các domain...',
-            content: '<p>Nội dung đang được cập nhật...</p>'
+            excerpt: 'Nhá»¯ng kinh nghiá»‡m thá»±c táº¿ tá»« hÃ ng trÄƒm há»c viÃªn Ä‘Ã£ pass AZ-900. TÃ¢m lÃ½ thi, cÃ¡ch quáº£n lÃ½ thá»i gian vÃ  cÃ¡c domain...',
+            content: '<p>Ná»™i dung Ä‘ang Ä‘Æ°á»£c cáº­p nháº­t...</p>'
         },
         {
             id: 'aws-saac03',
-            title: 'AWS SAA-C03 Cập Nhật Đề Thi Mới - Thay Đổi Quan Trọng 2026',
+            title: 'AWS SAA-C03 Cáº­p Nháº­t Äá» Thi Má»›i - Thay Äá»•i Quan Trá»ng 2026',
             category: 'aws',
             date: '28/05/2026',
             author: 'AWS Mentor',
             thumbnail: 'assets/images/logo.png',
-            excerpt: 'AWS vừa cập nhật cấu trúc đề thi SAA-C03 với nhiều thay đổi về domain phân bổ và dạng câu hỏi mới...',
-            content: '<p>Nội dung đang được cập nhật...</p>'
+            excerpt: 'AWS vá»«a cáº­p nháº­t cáº¥u trÃºc Ä‘á» thi SAA-C03 vá»›i nhiá»u thay Ä‘á»•i vá» domain phÃ¢n bá»• vÃ  dáº¡ng cÃ¢u há»i má»›i...',
+            content: '<p>Ná»™i dung Ä‘ang Ä‘Æ°á»£c cáº­p nháº­t...</p>'
         }
     ]
 };
+
