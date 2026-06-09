@@ -7,7 +7,7 @@ const BLOG_DATA = {
             category: 'sysadmin',
             date: '08/06/2026',
             author: 'Admin',
-            thumbnail: 'assets/images/nospacedevice.jpg',
+            thumbnail: 'assets/images/nospacedevice.png',
             excerpt: 'Khám phá tại sao hệ thống Linux báo lỗi No space left on device dù df -h vẫn báo ổ cứng còn trống đến 40%.',
             content: `<p>Một trong những tình huống khiến nhiều DevOps, SysAdmin và SRE đau đầu là nhìn thấy ứng dụng báo lỗi:</p>
 <blockquote><p><code>No space left on device</code></p></blockquote>
